@@ -53,7 +53,7 @@ In some cases, a technique might not be directly observed (or even be observable
 
 Note that direct software sightings are most useful for [software already contained in ATT&CK](https://attack.mitre.org/software/) that directly enables one or more ATT&CK techniques.
 
-### Indirect sightings of malicious software
+### Indirect sighting of malicious software
 
 In other cases, threat intelligence platforms or ISACs might have data feeds that indirectly demonstrate the fact that a piece of software is being used, without directly observing it.
 
