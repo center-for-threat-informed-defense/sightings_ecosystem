@@ -2,6 +2,10 @@
 
 This project is intended to give cyber defenders unprecedented visibility into what adversaries are actually doing in the wild. With your help, we are tracking MITRE ATT&CK® techniques observed in the wild to give defenders real data on technique prevalence and technique co-occurrence. With this data, we can analyze trends in evolving adversary behaviors, and ultimately provide a data-driven resource to support prioritizing defensive operations. This project will ingest ATT&CK technique sightings and process them to produce useful datasets and reporting. 
 
+You can be a part of the success of this project by contributing your Sightings data and help advance the state of cybersecurity at large. To join us, please email CTID@MITRE-Engenuity.org. 
+
+Take a look at our [data model](#dataModel.md) to have a better understanding of the data we're trying to collect. 
+
 ## Why Sightings?
 Defenders need data driven answers to questions like:
 - How do I know which techniques to prioritize?
