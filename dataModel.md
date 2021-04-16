@@ -5,38 +5,41 @@ All formats are JSON and consist of either a list of entries or a single entry. 
 
 Fields in **bold** are required, all other fields are optional. For the "Timestamp" datatype, please use RFC 3339 timestamps in UTC time. Most importantly, please do not include any information beyond that specified in the format below. In particular, we do not want to collect sensitive victim information or other PII.
 <br></br>
-## <a class="anchor" name="direct-technique-sighting"></a>Sighting
+## <a class="anchor" name="direct_technique"></a>Sighting
 
 |Field                                             |Datatype                                        |Description
 |--------------------------------------------------|------------------------------------------------|----------|
 |**version**                                           |String                                          |A required version string for this model. This must be set to **`1.0`**.
 |**id**                                           |String                                          |A required ID for this event. Can be any format, but if you don\'t have a preference UUIDv4 is preferred to ensure uniqueness.
-|**sightingType**                                 |String                                          |Either "[direct-technique](https://github.com/center-for-threat-informed-defense/sightings_ecosystem#direct-sighting-of-a-technique)", "[direct-software](https://github.com/center-for-threat-informed-defense/sightings_ecosystem#direct-sighting-of-malicious-software)", or "[indirect-software](https://github.com/center-for-threat-informed-defense/sightings_ecosystem#indirect-sighting-of-malicious-software)".
-|**startTime**                                    |Timestamp                                       |The time the activity started.
-|endTime                                           |Timestamp                                       |The time the activity ended.
-|**detectionType**                                |String                                          |Either "human-validated", "machine-validated", or "raw". Use human-validated when a human analyst has reviewed the detection and determined it to not be a false positive. Use machine-validated when a machine has performed an analysis on it, e.g. a sandbox. Use raw when no validation has occured. 
-|**techniques**                                   |List   |The list of techniques that were observed. The technique field has its own schema, so please use the [table](#technique) below for formatting.
-|sectors                                           |List\[String\]                                  |A list of sectors that the victim belongs to.
+|**sighting_type**                                 |String                                          |Either "direct_technique", "direct_software", or "indirect_software". If direct_software or indirect_software, "software_name" field is required. 
+|**start_time**                                    |Timestamp                                       |The time the activity started.
+|end_time                                           |Timestamp                                       |The time the activity ended.
+|**detection_type**                                |String                                          |Either "human_validated", "machine_validated", or "raw". Use human_validated when a human analyst has reviewed the detection and determined it to not be a false positive. Use machine_validated when a machine has performed an analysis on it, e.g. a sandbox. Use raw when no validation has occured. 
+|**techniques**                                   |List   |The list of techniques that were observed. The techniques field has its own schema, so please use the [table](#technique) below for formatting.
+|**hash**                                              |String                                          |**Required if using direct_software or indirect_software sighting type.** The MD5, SHA-1, or SHA-256 hash of the software.
+|software_name                                     |String                                          | The malicious software that was observed. This should ideally be an exact name from the list of [Software Names or Associated Software](https://attack.mitre.org/software/) already in ATT&CK.
+|sector                                           |List\[String\]                                  |A list of sectors that the victim belongs to.
 |country                                           |String                                          |The ISO country code of the victim.
-|size                                              |String                                          |The approximate size (in number of employees) of the victim.
-|attributionType                                   |String                                          |Either "group", "incident", \"software\".
+|region                                            |String                                          |The [IANA Regional Internet Registry](https://www.iana.org/numbers) code of the victim, e.g. ARIN. 
+|size                                              |String                                          |The approximate size (in number of employees) of the victim. Either "small"(<100), "medium"(100-999), or "large(>999)
+|attribution_type                                   |String                                          |Either "group", "incident", or "software".
 |attribution                                       |String                                          |The name of the threat group, incident/campaign, or malicious software associated to this activity. This should ideally be an exact name from the list of [Group Names or Associated Groups](https://attack.mitre.org/groups/) already in ATT&CK for threat groups, and of [Software Names or Associated Software](https://attack.mitre.org/software/) already in ATT&CK for malicious software.
-|detection_source                                  |String                                          |Either "host-based", "network-based".
-|privilege_level                                   |String                                          |Either "system", "admin", "user", "none".
+|detection_source                                  |String                                          |Either "host_based" or "network_based".
+|privilege_level                                   |String                                          |Either "system", "admin", "user", or "none".
 <br></br>
 
 
-## <a class="anchor" name="technique"></a>Technique
+## <a class="anchor" name="techniques"></a>Techniques
 
 | Field                 | Datatype              | Description           |
 |-----------------------|-----------------------|-----------------------|
 |**version**                                           |String                                          |A required version string for this model. This must be set to **`1.0`**.
-|**techniqueID**       | String                | The ATT&CK ID (e.g., "T1086") that was observed.
+|**technique_id**       | String                | The ATT&CK ID (e.g., "T1086") that was observed.
 | platform              | String                | The platform this technique was observed on. Please include the full name, edition, and version. E.g., "Windows 10 Enterprise", "Windows Server 2012 Standard", "MacOS 10.13.5", "Ubuntu 14.04".
-| **startTime**             | Timestamp             | The time that this specific technique was observed.
-| endTime               | Timestamp             | The time that this specific technique sighting ended.
+| **start_time**             | Timestamp             | The time that this specific technique was observed.
+| end_time               | Timestamp             | The time that this specific technique sighting ended.
 | tactic                | String                | The name of the tactic that this technique was used to enable. For example, a sighting of Scheduled Task could indicate whether it was used for privilege escalation or for persistence. Format should be the tactic name as referenced in ATT&CK navigator layer file format (lowercase dashed, credential-access).
-| rawData               | List\[data\]          | The list of raw data, if sharable, to support this observation. Could be command lines, event records, etc. Format this as described below.|
+| raw_data               | List\[data\]          | The list of raw data, if sharable, to support this observation. Could be command lines, event records, etc. Format this as described below.|
 
 <br></br>
 
@@ -71,17 +74,17 @@ A managed service provider monitors sensor data across its customer base. During
 {
   "version": "1.0",
   "id": "DT-1234",
-  "sightingType": "direct-technique-sighting",
+  "sighting_type": "direct_technique",
   "startTime": "2019-01-01T08:12:00Z",
   "endTime": "2019-01-01T08:12:00Z",
-  "detectionType": "human-validated",
+  "detectionType": "human_validated",
   "techniques": [
     {
-      "techniqueID": "T1088",
-      "startTime": "2019-01-01T08:12:00Z",
-      "endTime": "2019-01-01T08:12:00Z",
+      "technique_id": "T1088",
+      "start_time": "2019-01-01T08:12:00Z",
+      "end_time": "2019-01-01T08:12:00Z",
       "platform": "Windows 10",
-      "rawData": [
+      "raw_data": [
         { "process.create": {"command_line": "at 13:30 /interactive cmd"} }
       ]
     }
@@ -96,18 +99,18 @@ An ISAC collects, anonymizes, and redistributes sightings from its members. Whil
 {
   "version": "1.0",
   "id": "1000",
-  "sightingType": "direct-technique-sighting",
-  "startTime": "2019-01-01T08:12:00Z",
-  "endTime": "2019-01-01T08:12:00Z",
-  "detectionType": "human-validated",
+  "sighting_type": "direct_technique",
+  "start_time": "2019-01-01T08:12:00Z",
+  "end_time": "2019-01-01T08:12:00Z",
+  "detection_type": "human_validated",
   "sectors": ["finance"],
-  "attributionType": "group",
+  "attribution_type": "group",
   "attribution": "FIN7",
   "techniques": [
     {
-      "techniqueID": "T1003",
-      "startTime": "2019-01-01T08:12:00Z",
-      "endTime": "2019-01-01T08:12:00Z",
+      "technique_id": "T1003",
+      "start_time": "2019-01-01T08:12:00Z",
+      "end_time": "2019-01-01T08:12:00Z",
       "platform": "Windows 10 Enterprise"
     }
   ]
@@ -121,12 +124,13 @@ A large end-user organization is running an anti-malware service that blocks exe
 {
   "version": "1.0",
   "id": "32",
-  "sightingType": "direct-malware-sighting",
-  "startTime": "2019-01-01T08:12:00Z",
-  "endTime": "2019-01-01T08:12:00Z",
-  "detectionType": "raw",
+  "sighting_type": "direct_software",
+  "start_time": "2019-01-01T08:12:00Z",
+  "end_time": "2019-01-01T08:12:00Z",
+  "detection_type": "raw",
   "sectors": ["healthcare"],
-  "software": "MacSpy"
+  "hash": "<some hash>
+  "software_name": "MacSpy"
 }
 ```
 
@@ -137,11 +141,11 @@ A TIP vendor submits a set of IOCs that have been identified with ATT&CK techniq
 {
   "version": "1.0",
   "id": "32",
-  "sightingType": "indirect-malware-sighting",
-  "startTime": "2019-01-01T08:12:00Z",
-  "endTime": "2019-01-01T08:12:00Z",
+  "sighting_type": "indirect_software",
+  "start_time": "2019-01-01T08:12:00Z",
+  "end_time": "2019-01-01T08:12:00Z",
   "sectors": ["healthcare"],
-  "software": "RemCom",
-  "ioc": "<some hash>"
+  "hash": "<some hash>",
+  "softwareName": "RemCom"
 } 
 ```
