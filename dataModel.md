@@ -14,7 +14,7 @@ Fields in **bold** are required, all other fields are optional. For the "Timesta
 |**sighting_type**                                 |String                                          |Either "direct_technique", "direct_software", or "indirect_software". If direct_software or indirect_software, "software_name" field is required. 
 |**start_time**                                    |Timestamp                                       |The time the activity started.
 |end_time                                           |Timestamp                                       |The time the activity ended.
-|**detection_type**                                |String                                          |Either "human_validated", "machine_validated", or "raw". Use human_validated when a human analyst has reviewed the detection and determined it to not be a false positive. Use machine_validated when a machine has performed an analysis on it, e.g. a sandbox. Use raw when no validation has occured. 
+|**detection_type**                                |String                                          |Either "human_validated", "machine_validated", or "raw". Use human_validated when a human analyst has reviewed the detection and determined it to not be a false positive. Use machine_validated when a machine has performed an analysis on it, e.g. a sandbox. Use raw when no validation has occurred. 
 |**techniques**                                   |List   |The list of techniques that were observed. The techniques field has its own schema, so please use the [table](#technique) below for formatting.
 |**hash**                                              |String                                          |**Required if using direct_software or indirect_software sighting type.** The MD5, SHA-1, or SHA-256 hash of the software.
 |software_name                                     |String                                          | The malicious software that was observed. This should ideally be an exact name from the list of [Software Names or Associated Software](https://attack.mitre.org/software/) already in ATT&CK.
@@ -75,9 +75,9 @@ A managed service provider monitors sensor data across its customer base. During
   "version": "1.0",
   "id": "DT-1234",
   "sighting_type": "direct_technique",
-  "startTime": "2019-01-01T08:12:00Z",
-  "endTime": "2019-01-01T08:12:00Z",
-  "detectionType": "human_validated",
+  "start_time": "2019-01-01T08:12:00Z",
+  "end_time": "2019-01-01T08:12:00Z",
+  "detection_type": "human_validated",
   "techniques": [
     {
       "technique_id": "T1088",
@@ -146,6 +146,6 @@ A TIP vendor submits a set of IOCs that have been identified with ATT&CK techniq
   "end_time": "2019-01-01T08:12:00Z",
   "sectors": ["healthcare"],
   "hash": "<some hash>",
-  "softwareName": "RemCom"
+  "software_name": "RemCom"
 } 
 ```
