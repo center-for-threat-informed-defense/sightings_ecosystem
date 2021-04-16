@@ -60,3 +60,17 @@ In other cases, threat intelligence platforms or ISACs might have data feeds tha
 **Example**: A file hash for mimikatz.exe shared to an ISAC or threat intel platform would be an indirect sighting of mimikatz.exe. As with a direct sighting of malware, this does provide some indication (though weaker) that an adversary was interested in performing credential access.
 
 Note that, as above, indirect software sightings are most useful for [software already contained in ATT&CK](https://attack.mitre.org/software/) that directly enables one or more ATT&CK techniques. Additionally, indirect sightings should only be reported when there is a reasonable presumption that they haven't been reported by another party. In other words, don't write a scraper for some TIP and send sightings for all IOCs in that TIP unless you own or operate the TIP (if you do, please send us the sightings!).
+
+## Notice 
+
+Copyright 2020 MITRE Engenuity. Approved for public release. Document number CT0011
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at 
+
+http://www.apache.org/licenses/LICENSE-2.0 
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+
+This project makes use of ATT&CK®
+
+[ATT&CK Terms of Use](https://attack.mitre.org/resources/terms-of-use/)
