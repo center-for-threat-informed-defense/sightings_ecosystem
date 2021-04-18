@@ -33,7 +33,6 @@ Fields in **bold** are required, all other fields are optional. For the "Timesta
 
 | Field                 | Datatype              | Description           |
 |-----------------------|-----------------------|-----------------------|
-|**version**                                           |String                                          |A required version string for this model. This must be set to **`1.0`**.
 |**technique_id**       | String                | The ATT&CK ID (e.g., "T1086") that was observed.
 | platform              | String                | The platform this technique was observed on. Please include the full name, edition, and version. E.g., "Windows 10 Enterprise", "Windows Server 2012 Standard", "MacOS 10.13.5", "Ubuntu 14.04".
 | **start_time**             | Timestamp             | The time that this specific technique was observed.
