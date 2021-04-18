@@ -1,0 +1,29 @@
+{
+    "version": "1.0",
+    "id": "",
+    "sighting_type": "indirect_software",
+    "start_time": "",
+    "end_time": "",
+    "detection_type": "",
+    "techniques": [
+        {
+            "technique_id": "",
+            "start_time": "",
+            "end_time": "",
+            "tactic": "",
+            "raw_data": [
+                {}
+            ]
+        }
+    ],
+    "hash": "",
+    "software_name": "",
+    "sector": "",
+    "country": "",
+    "region": "",
+    "size": "",
+    "attribution_type": "",
+    "attribution": "",
+    "detection_source": "",
+    "privilege_level": ""
+}

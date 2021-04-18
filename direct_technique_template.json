@@ -1,0 +1,27 @@
+{
+    "version": "1.0",
+    "id": "",
+    "sighting_type": "direct_technique",
+    "start_time": "",
+    "end_time": "",
+    "detection_type": "",
+    "techniques": [
+        {
+            "technique_id": "",
+            "start_time": "",
+            "end_time": "",
+            "tactic": "",
+            "raw_data": [
+                {}
+            ]
+        }
+    ],
+    "sector": "",
+    "country": "",
+    "region": "",
+    "size": "",
+    "attribution_type": "",
+    "attribution": "",
+    "detection_source": "",
+    "privilege_level": ""
+}
