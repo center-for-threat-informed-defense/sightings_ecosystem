@@ -12,7 +12,7 @@ If you would like to get involved with the Sightings Ecosystem, let's continue t
 
 ### Code Contributors
 
-Pull requests should target the **[main](https://github.com/center-for-threat-informed-defense/sightings/tree/main)** branch of the repository.
+Pull requests should target the **[main](https://github.com/center-for-threat-informed-defense/sightings_ecosystem/tree/main)** branch of the repository.
 
 Also, if you contribute any source code, we need you to agree to the following Developer's Certificate of Origin below.
 
