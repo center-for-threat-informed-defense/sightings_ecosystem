@@ -4,7 +4,7 @@
 All formats are JSON and consist of either a list of entries or a single entry. Please e-mail <ctid@mitre-engenuity.org> with any questions or suggestions.
 
 Fields in **bold** are required, all other fields are optional. For the "Timestamp" datatype, please use RFC 3339 timestamps in UTC time. Most importantly, please do not include any information beyond that specified in the format below. In particular, we do not want to collect sensitive victim information or other PII.
-<br></br>
+
 ## <a class="anchor" name="direct_technique"></a>Sighting
 
 |Field                                             |Datatype                                        |Description
@@ -39,7 +39,6 @@ Fields in **bold** are required, all other fields are optional. For the "Timesta
 | tactic                | String                | The name of the tactic that this technique was used to enable. For example, a sighting of Scheduled Task could indicate whether it was used for privilege escalation or for persistence. Format should be the tactic name as referenced in ATT&CK navigator layer file format (lowercase dashed, credential-access).
 | raw_data               | List\[data\]          | The list of raw data, if sharable, to support this observation. Could be command lines, event records, etc. Format this as described below.|
 
-<br></br>
 
 ## Formatting raw data
 
