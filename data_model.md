@@ -26,7 +26,6 @@ Fields in **bold** are required, all other fields are optional. For the "Timesta
 |attribution                                       |String                                          |The name of the threat group, incident/campaign, or malicious software associated to this activity. This should ideally be an exact name from the list of [Group Names or Associated Groups](https://attack.mitre.org/groups/) already in ATT&CK for threat groups, and of [Software Names or Associated Software](https://attack.mitre.org/software/) already in ATT&CK for malicious software.
 |detection_source                                  |String                                          |Either "host_based" or "network_based".
 |privilege_level                                   |String                                          |Either "system", "admin", "user", or "none".
-<br></br>
 
 
 ## <a class="anchor" name="techniques"></a>Techniques
