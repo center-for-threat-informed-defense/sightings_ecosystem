@@ -128,7 +128,7 @@ A large end-user organization is running an anti-malware service that blocks exe
   "end_time": "2019-01-01T08:12:00Z",
   "detection_type": "raw",
   "sectors": ["healthcare"],
-  "hash": "<some hash>
+  "hash": "<some hash>",
   "software_name": "MacSpy"
 }
 ```
