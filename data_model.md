@@ -18,7 +18,7 @@ Fields in **bold** are required, all other fields are optional. For the "Timesta
 |**techniques**                                   |List   |The list of techniques that were observed. The techniques field has its own schema, so please use the [table](#technique) below for formatting.
 |**hash**                                              |String                                          |**Required if using direct_software or indirect_software sighting type.** The MD5, SHA-1, or SHA-256 hash of the software.
 |software_name                                     |String                                          | The malicious software that was observed. This should ideally be an exact name from the list of [Software Names or Associated Software](https://attack.mitre.org/software/) already in ATT&CK.
-|sector                                           |List\[String\]                                  |A list of sectors that the victim belongs to.
+|sector                                           |List\[String\]                                  |The [NAICS](https://www.census.gov/naics/?58967?yearbck=2017) code for the sector(s) in which the victim belongs. 
 |country                                           |String                                          |The ISO country code of the victim.
 |region                                            |String                                          |The [IANA Regional Internet Registry](https://www.iana.org/numbers) code of the victim, e.g. ARIN. 
 |size                                              |String                                          |The approximate size (in number of employees) of the victim. Either "small"(<100), "medium"(100-999), or "large(>999)
