@@ -4,7 +4,7 @@
 All formats are JSON and consist of either a list of entries or a single entry. Please e-mail <ctid@mitre-engenuity.org> with any questions or suggestions.
 
 Fields in **bold** are required, all other fields are optional. For the "Timestamp" datatype, please use RFC 3339 timestamps in UTC time. Most importantly, please do not include any information beyond that specified in the format below. In particular, we do not want to collect sensitive victim information or other PII.
-<br></br>
+
 ## <a class="anchor" name="direct_technique"></a>Sighting
 
 |Field                                             |Datatype                                        |Description
@@ -12,13 +12,13 @@ Fields in **bold** are required, all other fields are optional. For the "Timesta
 |**version**                                           |String                                          |A required version string for this model. This must be set to **`1.0`**.
 |**id**                                           |String                                          |A required ID for this event. Can be any format, but if you don\'t have a preference UUIDv4 is preferred to ensure uniqueness.
 |**sighting_type**                                 |String                                          |Either "direct_technique", "direct_software", or "indirect_software". If direct_software or indirect_software, "software_name" field is required. 
-|**start_time**                                    |Timestamp                                       |The time the activity started.
-|end_time                                           |Timestamp                                       |The time the activity ended.
+|**start_time**                                    |Timestamp                                       |The [RFC 3339](https://tools.ietf.org/html/rfc3339#page-10) UTC timestamp of when the activity started. 
+|end_time                                           |Timestamp                                       |The [RFC 3339](https://tools.ietf.org/html/rfc3339#page-10) UTC timestamp of when the activity ended. 
 |**detection_type**                                |String                                          |Either "human_validated", "machine_validated", or "raw". Use human_validated when a human analyst has reviewed the detection and determined it to not be a false positive. Use machine_validated when a machine has performed an analysis on it, e.g. a sandbox. Use raw when no validation has occurred. 
 |**techniques**                                   |List   |The list of techniques that were observed. The techniques field has its own schema, so please use the [table](#technique) below for formatting.
 |**hash**                                              |String                                          |**Required if using direct_software or indirect_software sighting type.** The MD5, SHA-1, or SHA-256 hash of the software.
 |software_name                                     |String                                          | The malicious software that was observed. This should ideally be an exact name from the list of [Software Names or Associated Software](https://attack.mitre.org/software/) already in ATT&CK.
-|sector                                           |List\[String\]                                  |A list of sectors that the victim belongs to.
+|sector                                           |List\[String\]                                  |The [NAICS](https://www.census.gov/naics/?58967?yearbck=2017) code for the sector(s) in which the victim belongs. 
 |country                                           |String                                          |The ISO country code of the victim.
 |region                                            |String                                          |The [IANA Regional Internet Registry](https://www.iana.org/numbers) code of the victim, e.g. ARIN. 
 |size                                              |String                                          |The approximate size (in number of employees) of the victim. Either "small"(<100), "medium"(100-999), or "large(>999)
@@ -26,7 +26,6 @@ Fields in **bold** are required, all other fields are optional. For the "Timesta
 |attribution                                       |String                                          |The name of the threat group, incident/campaign, or malicious software associated to this activity. This should ideally be an exact name from the list of [Group Names or Associated Groups](https://attack.mitre.org/groups/) already in ATT&CK for threat groups, and of [Software Names or Associated Software](https://attack.mitre.org/software/) already in ATT&CK for malicious software.
 |detection_source                                  |String                                          |Either "host_based" or "network_based".
 |privilege_level                                   |String                                          |Either "system", "admin", "user", or "none".
-<br></br>
 
 
 ## <a class="anchor" name="techniques"></a>Techniques
@@ -40,7 +39,6 @@ Fields in **bold** are required, all other fields are optional. For the "Timesta
 | tactic                | String                | The name of the tactic that this technique was used to enable. For example, a sighting of Scheduled Task could indicate whether it was used for privilege escalation or for persistence. Format should be the tactic name as referenced in ATT&CK navigator layer file format (lowercase dashed, credential-access).
 | raw_data               | List\[data\]          | The list of raw data, if sharable, to support this observation. Could be command lines, event records, etc. Format this as described below.|
 
-<br></br>
 
 ## Formatting raw data
 
@@ -128,7 +126,7 @@ A large end-user organization is running an anti-malware service that blocks exe
   "end_time": "2019-01-01T08:12:00Z",
   "detection_type": "raw",
   "sectors": ["healthcare"],
-  "hash": "<some hash>
+  "hash": "<some hash>",
   "software_name": "MacSpy"
 }
 ```
