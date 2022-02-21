@@ -5,7 +5,7 @@
 APP_NAME := sightings
 VENV := .venv
 BIN := $(VENV)/bin
-PY_VERSION := python3.8
+PY_VERSION := python3
 TIMESTAMP := $(shell date -u +"%Y%m%d_%H%M%S")
 GIT_HASH := $(shell git rev-parse --short HEAD)
 
