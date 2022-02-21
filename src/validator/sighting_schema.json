@@ -1,0 +1,154 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"definitions": {
+		"sightingObject": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"version": {
+					"type": "string",
+					"enum": [ "1.0" ],
+					"examples": [ "1.0" ]
+				},
+				"id": {
+					"type": "string",
+					"examples": [ "DT-1234" ]
+				},
+				"sighting_type": {
+					"type": "string",
+					"examples": [ "indirect_software" ],
+					"enum": [ "indirect_software", "direct_technique", "direct_software" ]
+				},
+				"start_time": {
+					"type": "string",
+					"examples": [ "2019-01-01T08:12:00Z" ],
+					"format": "date-time"
+				},
+				"end_time": {
+					"type": "string",
+					"examples": [ "2019-01-01T08:12:00Z" ],
+					"format": "date-time"
+				},
+				"detection_type": {
+					"type": "string",
+					"examples": [ "human_validated" ],
+					"enum": [ "human_validated", "machine_validated", "raw" ]
+				},
+				"techniques": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"technique_id": {
+								"type": "string",
+								"examples": [ "T1088" ]
+							},
+							"start_time": {
+								"type": "string",
+								"examples": [ "2019-01-01T08:12:00Z" ],
+								"format": "date-time"
+							},
+							"end_time": {
+								"type": "string",
+								"examples": [ "2019-01-01T08:12:00Z" ],
+								"format": "date-time"
+							},
+							"platform": {
+								"type": "string",
+								"examples": [ "Windows 10" ]
+							},
+							"raw_data": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"process.create": {
+											"type": "object",
+											"properties": {
+												"command_line": {
+													"type": "string",
+													"examples": [ "at 13:30 /interactive cmd" ]
+												}
+											},
+											"additionalProperties": true
+										}
+									},
+									"additionalProperties": true
+								}
+							}
+						},
+						"required": [ "technique_id", "start_time" ],
+						"additionalProperties": false
+					}
+				},
+				"hash": {
+					"type": "string",
+					"pattern": "^[a-fA-F0-9]{64}(:.+)?$|^[a-fA-F0-9]{40}(:.+)?$|^[a-fA-F0-9]{32}(:.+)?$",
+					"examples": [ "a61c66d9c15533fd1d9c6edf7f1d528197724543d1629dfb15f0eb6c222bc453" ]
+				},
+				"software_name": {
+					"type": "string",
+					"examples": [ "Win32 EXE" ]
+				},
+				"sector": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"examples": [ "healthcare" ]
+					}
+				},
+				"country": {
+					"type": "string",
+					"examples": [ "us" ]
+				},
+				"region": {
+					"type": "string",
+					"examples": [ "ARIN" ]
+				},
+				"size": {
+					"type": "string",
+					"examples": [ "10000" ]
+				},
+				"attribution_type": {
+					"type": "string",
+					"examples": [ "software" ],
+					"enum": [ "group", "incident", "software" ]
+				},
+				"detection_source": {
+					"type": "string",
+					"examples": [ "host_based" ],
+					"enum": [ "host_based", "network_based" ]
+				},
+				"privilege_level": {
+					"type": "string",
+					"examples": [ "none" ],
+					"enum": [ "system", "admin", "user", "none" ]
+				}
+			},
+			"required": [
+				"version",
+				"id",
+				"sighting_type",
+				"start_time",
+				"detection_type",
+				"techniques"
+			]
+		}
+	},
+	"type": [ "object", "array" ],
+		"oneOf": [
+				{
+					"type": "object",
+					"$ref": "#/definitions/sightingObject"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/sightingObject",
+						"minItems": 1
+					},
+					"additionalItems": false
+				}
+			]
+
+	}

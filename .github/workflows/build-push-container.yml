@@ -1,0 +1,61 @@
+# Will automatically build and push new docker image on release
+
+name: Publish Docker image on publish of release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  push_to_registries:
+    name: Push Docker image to multiple registries if necessary
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker - analysis image
+        id: meta_analysis
+        uses: docker/metadata-action@v3
+        with:
+          images: |
+            ghcr.io/${{ github.repository }}-analysis
+          labels: |
+            org.opencontainers.image.url=https://ctid.mitre-engenuity.org/
+
+      - name: Build and push Analysis Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: src/analysis/Dockerfile
+          push: true
+          tags: ${{ steps.meta_analysis.outputs.tags }}
+          labels: ${{ steps.meta_analysis.outputs.labels }}
+
+      - name: Extract metadata (tags, labels) for Docker - pipeline image
+        id: meta_pipeline
+        uses: docker/metadata-action@v3
+        with:
+          images: |
+            ghcr.io/${{ github.repository }}-pipeline
+          labels: |
+            org.opencontainers.image.url=https://ctid.mitre-engenuity.org/
+
+      - name: Build and push Pipeline Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: src/pipeline/Dockerfile
+          push: true
+          tags: ${{ steps.meta_pipeline.outputs.tags }}
+          labels: ${{ steps.meta_pipeline.outputs.labels }}

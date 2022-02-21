@@ -1,0 +1,6 @@
+logging-formatter-anticrlf==1.2
+marshmallow==3.5.1
+psycopg2-binary==2.8.6
+sqlalchemy-batch-inserts==0.0.4
+SQLAlchemy==1.4.13
+wait-for-it==2.2.1
