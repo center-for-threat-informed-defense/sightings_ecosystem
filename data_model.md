@@ -5,12 +5,27 @@ All formats are JSON and consist of either a list of entries or a single entry. 
 Fields in **bold** and identified by the `Required` column are required, all other fields are optional. For the "Timestamp" datatype, please use RFC 3339 timestamps in UTC time.
 Most importantly, please do not include any information beyond that specified in the format below. In particular, we do not want to collect sensitive victim information or other PII.
 
+- [Data Model Format Definitions](#data-model-format-definitions)
+- [Terms Used](#terms-used)
+- [Sighting](#sighting)
+- [Techniques](#techniques)
+- [Handling Raw Data](#handling-raw-data)
+  - [Formatting](#formatting)
+  - [Validating](#validating)
+    - [AJV](#ajv)
+    - [Validation Examples](#validation-examples)
+- [Data Examples](#data-examples)
+  - [Simple Technique Sighting](#simple-technique-sighting)
+  - [Technique Sighting with Attribution](#technique-sighting-with-attribution)
+  - [Malware Blocked by Security Tool](#malware-blocked-by-security-tool)
+  - [IOC Submission](#ioc-submission)
+
 ## Terms Used
 
 - MUST -> Absolute requirement of the specification.
 - SHOULD -> Recommended but not a requirement.
 
-## <a class="anchor" name="direct_technique"></a>Sighting
+## Sighting
 
 | Field              | Datatype       | Required                                                                     | Description                                                                                                                                                                                                                                                                                                                                                                                      |
 | ------------------ | -------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -32,7 +47,7 @@ Most importantly, please do not include any information beyond that specified in
 | detection_source   | String         | no                                                                           | **MUST** be one of the following values: `host_based` or `network_based`.                                                                                                                                                                                                                                                                                                                                                          |
 | privilege_level    | String         | no                                                                           | **MUST** be on of the following values: "system", "admin", "user", "none".                                                                                                                                                                                                                                                                                                                                                     |
 
-## <a class="anchor" name="techniques"></a>Techniques
+## Techniques
 
 | Field            | Datatype     | Description |
 | ---------------- | ------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,7 +58,9 @@ Most importantly, please do not include any information beyond that specified in
 | tactic           | String       | no          | The name of the tactic that this technique was used to enable. For example, a sighting of Scheduled Task could indicate whether it was used for privilege escalation or for persistence. Format should be the tactic name as referenced in ATT&CK navigator layer file format (lowercase dashed, credential-access). |
 | raw_data         | List\[data\] | no          | The list of raw data, if sharable, to support this observation. Could be command lines, event records, etc. Format this as described below.                                                                                                                                                                          |
 
-## Formatting raw data
+## Handling Raw Data
+
+### Formatting
 
 Each object in the list of raw data should consist of an object from the [CAR data model](https://car.mitre.org/data_model/) in the form of "object.action": {"field": "value"}.
 
@@ -67,7 +84,27 @@ For example:
 
 More complete examples are also below. If something isn't expressible in the CAR data model as-is, just make up an object and action that makes sense to you and we'll figure it out.
 
-## Examples
+### Validating
+
+#### AJV
+
+AJV, or Another JSON Validator, is a useful tool to validate your data against the JSON schema.
+
+To install, run the following commands:
+
+- `npm install -g ajv-cli ajv-formats`
+
+#### Validation Examples
+
+- Validate a single file named `MY_DATA_FILE.json`
+  - `ajv --strict=false validate -s src/validator/sighting_schema.json -d MY_DATA_FILE.json -c ajv-formats`
+- Test a directory of files against the schema
+  - `ajv --strict=false test -s src/validator/sighting_schema.json -d "*.json" -c ajv-formats --valid`
+- Test included sample data in the repository (sanity check to ensure `ajv` is installed properly)
+  - `ajv --strict=false test -s src/validator/sighting_schema.json -d src/validator/sighting.json -c ajv-formats --valid`
+  - Should return output similar to `src/validator/sighting.json passed test`
+
+## Data Examples
 
 ### Simple Technique Sighting
 

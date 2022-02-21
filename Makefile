@@ -86,6 +86,11 @@ stop-pgadmin: ## Stop pgadmin
 logs: ## View logs for analysis service and dependencies
 	DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml logs
 
+.PHONY: logs-follow
+logs-follow: ## Tail logs for analysis service and dependencies
+	DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml logs -f
+
+
 .PHONY: test
 test: install ## Run tests
 	./$(BIN)/pytest --cov=src/pipeline --cov=src/analysis --cov=src/validator --cov-report=xml --flake8
