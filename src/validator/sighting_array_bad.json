@@ -1,0 +1,66 @@
+[
+    {
+        "version": "1.0",
+        "id": "DT-1234",
+        "sighting_type": "indirectsoftware",
+        "start_time": "2019-01-01T08:12:00Z",
+        "end_time": "2019-01-01T08:12:00Z",
+        "detection_type": "human_validated",
+        "techniques": [
+            {
+                "technique_id": "T1088",
+                "start_time": "2019-01-01T08:12:00Z",
+                "end_time": "2019-01-01T08:12:00Z",
+                "platform": "Windows 10",
+                "raw_data": [
+                    {
+                        "process.create": {
+                            "command_line": "at 13:30 /interactive cmd"
+                        }
+                    }
+                ]
+            }
+        ],
+        "hash": "a61c66d9c15533fd1d9c6edf7f1d528197724543d1629dfb15f0eb6c222bc453",
+        "software_name": "Win32 EXE",
+        "sector": [
+            "healthcare"
+        ],
+        "country": "us",
+        "attribution_type": "software",
+        "detection_source": "host-based",
+        "privilege_level": "none"
+    },
+    {
+        "version": "1.0",
+        "id": "DT-1234",
+        "sighting_type": "indirect_software",
+        "start_time": "2019-01-01T08:12:00Z",
+        "end_time": "2019-01-01T08:12:00Z",
+        "detection_type": "human_validated",
+        "techniques": [
+            {
+                "technique_id": "T1088",
+                "start_time": "2019-01-01T08:12:00Z",
+                "end_time": "2019-01-01T08:12:00Z",
+                "platform": "Windows 10",
+                "raw_data": [
+                    {
+                        "process.create": {
+                            "command_line": "at 13:30 /interactive cmd"
+                        }
+                    }
+                ]
+            }
+        ],
+        "hash": "a61c66d9c15533fd1d9c6edf7f1d528197724543d1629dfb15f0eb6c222bc453",
+        "software_name": "Win32 EXE",
+        "sector": [
+            "healthcare"
+        ],
+        "country": "us",
+        "attribution_type": "software",
+        "detection_source": "host-based",
+        "privilege_level": "none"
+    }
+]

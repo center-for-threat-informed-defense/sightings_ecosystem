@@ -1,0 +1,46 @@
+name: test
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements/pipeline-requirements.txt
+        pip install -r requirements/analysis-requirements.txt
+        pip install -r requirements/pipeline-requirements-ci.txt
+
+    - name: Test and lint with pytest
+      run: |
+       pytest --cov=src/pipeline --cov=src/analysis --cov=src/validator --cov-report=xml --flake8
+
+    - name: Upload Coverage to CodeCov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_SECRET }}
+        files: coverage.xml
+        verbose: true
+
+    - name: Bandit Security Check
+      run: |
+        bandit -r src/ --exit-zero
+
+    - name: Safety Vulnerability Check (pipeline)
+      run: |
+        safety check --file requirements/pipeline-requirements.txt
+
+    - name: Safety Vulnerability Check (analysis)
+      run: |
+        safety check --file requirements/analysis-requirements.txt

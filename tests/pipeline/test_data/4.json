@@ -1,0 +1,10 @@
+{
+    "version": "1.0",
+    "id": "32",
+    "sightingType": "indirect-malware-sighting",
+    "startTime": "2019-01-01T08:12:00Z",
+    "endTime": "2019-01-01T08:12:00Z",
+    "sectors": ["healthcare"],
+    "software": "RemCom",
+    "ioc": "<some hash>"
+}

@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  analysis:
+    image: ghcr.io/center-for-threat-informed-defense/sightings_ecosystem-analysis:latest
+    profiles: ["all", "analysis"]
+    build:
+      context: .
+      dockerfile: src/analysis/Dockerfile
+    ports:
+      - "8050:8050"
+    environment:
+      - sighting_db_conn_str=postgresql://sightings:sightings@postgres/sightings
+    command: ["wait-for-it", "--timeout=0", "-s", "postgres:5432", "python", "/analysis/sightings_dash.py"]
+
+  pipeline:
+    image: ghcr.io/center-for-threat-informed-defense/sightings_ecosystem-pipeline:latest
+    profiles: ["all", "pipeline"]
+    build:
+      context: .
+      dockerfile: src/pipeline/Dockerfile
+    environment:
+      - sighting_db_hostname_str=postgres
+      - sighting_db_conn_str=postgresql://sightings:sightings@postgres/sightings
+    command: ["wait-for-it", "--timeout=0", "-s", "postgres:5432", "--", "python", "pipeline.py", "-i", "/data"]
+    volumes:
+      - ${INPUT_DATA_DIR:-./data}:/data
+
+  postgres:
+    image: postgres:13-alpine
+    shm_size: 4g
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sightings
+      POSTGRES_PASSWORD: sightings
+      POSTGRES_DB: sightings
+    volumes:
+      - ./src/pipeline/db/init.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./src/pipeline/db/_flattened_sightings.sql:/docker-entrypoint-initdb.d/2.sql
+      - ./src/pipeline/db/_sighting_export.sql:/docker-entrypoint-initdb.d/3.sql
+      - db-data:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    profiles: ["all", "pgadmin"]
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: sightings@mitre-engenuity.org
+      PGADMIN_DEFAULT_PASSWORD: sightings
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    ports:
+      - "80:80"
+volumes:
+  db-data:
+  pgadmin-data:

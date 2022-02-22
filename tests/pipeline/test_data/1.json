@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "id": "DT-1234",
+  "sightingType": "direct-technique-sighting",
+  "startTime": "2019-02-01T08:12:00Z",
+  "endTime": "2019-01-01T08:12:00Z",
+  "detectionType": "human-validated",
+  "techniques": [
+    {
+      "techniqueID": "T1088",
+      "startTime": "2019-01-01T08:12:00Z",
+      "endTime": "2019-01-01T08:12:00Z",
+      "platform": "Windows 10",
+      "rawData": [
+        {"process.create": {"command_line": "at 13:30 /interactive cmd"}}
+      ]
+    }
+  ]
+}
