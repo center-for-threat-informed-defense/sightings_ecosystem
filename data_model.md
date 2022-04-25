@@ -49,7 +49,7 @@ Most importantly, please do not include any information beyond that specified in
 
 ## Techniques
 
-| Field            | Datatype     | Description |
+| Field            | Datatype     | Description |                                                                                                                                                                                                                                                                                                                      |
 | ---------------- | ------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **technique_id** | String       | yes         | The ATT&CK ID (e.g., "T1086") that was observed.                                                                                                                                                                                                                                                                     |
 | platform         | String       | no          | The platform this technique was observed on. Please include the full name, edition, and version. E.g., "Windows 10 Enterprise", "Windows Server 2012 Standard", "MacOS 10.13.5", "Ubuntu 14.04".                                                                                                                     |
