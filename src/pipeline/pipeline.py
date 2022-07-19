@@ -42,7 +42,7 @@ technique_count = 0
 
 total_sightings_found = 0
 db_ingest_count = 0
-db_ingest_batch_size = 1000
+db_ingest_batch_size = os.getenv("db_ingest_batch_size", 1000)
 db_ingest_elapsed_time = 0
 
 
@@ -119,19 +119,25 @@ def process_sighting(session, sighting_data_dir):  # pragma: no covers
                         obj = util.load_data_str(data)
                         if obj:
                             # Array of Sighting models
+                            last_sighting_from_file = False
                             if isinstance(obj, list):
-                                for elem in obj:
+                                for idx, elem in enumerate(obj):
                                     schema = SightingSchema()
                                     obj_model = schema.load(elem)
                                     db_batched_insert_sightings(session, obj_model, cid=dirname)
-                                    db_batched_commit_sightings(session)
+                                    # maintain state through enumeration, and flag when we are ready to commit at end of file
+                                    if idx == (len(obj) - 1):
+                                        last_sighting_from_file = True
+                                    db_batched_commit_sightings(session, last_sighting_from_file)
                                     update_completion_estimate()
                             else:
                                 # Single Sighting model
                                 schema = SightingSchema()
                                 obj_model = schema.load(obj)
+                                # if we retrieve 1 sighting from a file, its always the last
+                                last_sighting_from_file = True
                                 db_batched_insert_sightings(session, obj_model, cid=dirname)
-                                db_batched_commit_sightings(session)
+                                db_batched_commit_sightings(session, last_sighting_from_file)
                                 update_completion_estimate()
                         else:
                             logger.error("{}: {} - {}".format(__file__, file, "error {}".format(file)))
@@ -153,12 +159,12 @@ def db_batched_insert_sightings(session, obj_model, cid):  # pragma: no covers
         db_ingest_elapsed_time += end_time - start_time
 
 
-def db_batched_commit_sightings(session):  # pragma: no covers
+def db_batched_commit_sightings(session, last_sightings_from_file):  # pragma: no covers
     try:
         global db_ingest_batch_size
         global db_ingest_elapsed_time
 
-        if sighting_count % db_ingest_batch_size == 0:
+        if sighting_count % db_ingest_batch_size == 0 or last_sightings_from_file:
             start_time = timer()
             session.commit()
             end_time = timer()
