@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "definitions": {
+    "sightingObject": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "examples": ["2.0"],
+          "const": "2.0"
+        },
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "examples": ["37146915-6b2e-485d-a436-6b8df66b8950"]
+        },
+        "start_time": {
+          "type": "string",
+          "format": "date-time",
+          "examples": ["2022-01-01T08:12:00Z"]
+        },
+        "detection_type": {
+          "type": "string",
+          "examples": ["human_validated"],
+          "enum": ["human_validated", "raw"]
+        },
+        "tid": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": ["T1557", "T1003.001"],
+            "pattern": "^T\\d{4}(\\.\\d{3})?$"
+          }
+        },
+        "hash": {
+          "type": "string",
+          "examples": [
+            "a61c66d9c15533fd1d9c6edf7f1d528197724543d1629dfb15f0eb6c222bc453"
+          ]
+        },
+        "software_name": {
+          "type": "string",
+          "examples": ["NotPetya"]
+        },
+        "sector": {
+          "type": "string",
+          "examples": ["22"],
+          "pattern": "^[0-9]{2}$"
+        },
+        "country": {
+          "type": "string",
+          "examples": ["us"],
+          "pattern": "^[A-Za-z]{2}$"
+        },
+        "region": {
+          "type": "string",
+          "examples": ["ARIN"],
+          "enum": ["AFRINIC", "APNIC", "ARIN", "LACNIC", "RIPE NCC"]
+        },
+        "detection_source": {
+          "type": "string",
+          "examples": ["host_based"],
+          "enum": ["host_based", "network_based", "cloud_based"]
+        },
+        "platform": {
+          "type": "string",
+          "examples": ["windows"],
+          "enum": ["windows", "macos", "nix", "other"]
+        },
+        "privilege_level": {
+          "type": "string",
+          "examples": ["none"],
+          "enum": ["system", "admin", "user", "none"]
+        }
+      },
+      "required": [
+        "version",
+        "id",
+        "start_time",
+        "detection_type",
+        "tid"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "type": ["object", "array"],
+  "oneOf": [
+    {
+      "type": "object",
+      "$ref": "#/definitions/sightingObject"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/sightingObject",
+        "minItems": 1
+      },
+      "additionalItems": false
+    }
+  ]
+}
