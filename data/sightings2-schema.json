@@ -29,7 +29,8 @@
           "items": {
             "type": "string",
             "examples": ["T1557", "T1003.001"],
-            "pattern": "^T\\d{4}(\\.\\d{3})?$"
+            "pattern": "^T\\d{4}(\\.\\d{3})?$",
+            "minItems": 1
           }
         },
         "hash": {
