@@ -2,7 +2,7 @@
 
 ## How to contribute
 
-Thanks for contributing to the Sightings Ecosystem proejct!
+Thanks for contributing to the Sightings Ecosystem project!
 
 You are welcome to comment on issues, open new issues, and open pull requests.
 
