@@ -24,7 +24,7 @@
           "examples": ["human_validated"],
           "enum": ["human_validated", "raw"]
         },
-        "tid": {
+        "technique": {
           "type": "array",
           "items": {
             "type": "string",
@@ -32,6 +32,11 @@
             "pattern": "^T\\d{4}(\\.\\d{3})?$",
             "minItems": 1
           }
+        },
+        "tactic": {
+          "type": "string",
+          "examples": ["TA0043"],
+          "pattern": "^TA\\d{4}"
         },
         "hash": {
           "type": "string",
