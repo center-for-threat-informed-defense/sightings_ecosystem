@@ -2,6 +2,8 @@
 # See `make help` for a list of all available commands.
 #
 
+include make/*.mk
+
 APP_NAME := sightings
 VENV := .venv
 BIN := $(VENV)/bin
@@ -12,8 +14,10 @@ GIT_HASH := $(shell git rev-parse --short HEAD)
 .DEFAULT_GOAL := help
 
 .PHONY: help
-help:
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+help: ## Show Makefile help
+	@grep -hE '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
+		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' | \
+		sort
 
 # the aliasing for the venv target is done primarily for readability
 $(VENV): $(BIN)/activate
