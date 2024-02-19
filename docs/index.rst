@@ -21,7 +21,8 @@ mollit anim id est laborum.
     Technique Co-Occurrences
     Additional Analysis
     Defenses in Summary
-    
+    Lessons Learned
+    Sightings Ecosystem in the Future
 
 Notice
 ------
