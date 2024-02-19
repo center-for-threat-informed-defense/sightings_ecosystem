@@ -34,3 +34,4 @@ We provide a data model to potential contributors that shows the format for subm
    :alt: Our data model for Sightings Ecosystem II.
    :scale: 80%
    :align: center
+   

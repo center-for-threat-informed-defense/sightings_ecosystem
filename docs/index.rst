@@ -15,7 +15,6 @@ mollit anim id est laborum.
     :caption: Contents
 
     Introduction
-    Background
     Overview
     Top 15 Techniques
     Technique Co-Occurrences
@@ -23,7 +22,7 @@ mollit anim id est laborum.
     Defenses in Summary
     Lessons Learned
     Sightings Ecosystem in the Future
-    
+
 
 Notice
 ------
