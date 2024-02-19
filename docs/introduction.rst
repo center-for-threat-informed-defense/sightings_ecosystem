@@ -1,5 +1,5 @@
 Introduction
-============
+=============
 
 ..  TODO Add any chapters you wish as separate *.rst files that are referenced in the
     index.rst. This file can contain an introduction if you want, or delete it and
