@@ -29,3 +29,8 @@ Data model
 ----------
 
 We provide a data model to potential contributors that shows the format for submitting information and includes required and optional fields. Between the first round of Sightings and this round, our data model changed slightly with the elimination of size, end_time, attribution, and attribution_type fields. Size, when combined with data from other fields, could reveal victim information despite our anonymizing attempts. It is also a difficult field to collect, like end_time, because contributors likely do not include this information in their own data collection. Additionally, attribution is a notoriously difficult problem in the cyber security community. It takes contributors significant time and effort to identify attribution, if it’s even possible to do. Because of these considerations and the lack of data for these fields in round 1, we removed them for round 2. We also added a platform field for round 2. This allowed us to easily view sightings across different operating systems.
+
+.. figure:: _static/data_model.png
+   :alt: Our data model for Sightings Ecosystem II.
+   :scale: 80%
+   :align: center
