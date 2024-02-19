@@ -14,7 +14,14 @@ mollit anim id est laborum.
     :maxdepth: 2
     :caption: Contents
 
-    introduction
+    Introduction
+    Background
+    Overview
+    Top 15 Techniques
+    Technique Co-Occurrences
+    Additional Analysis
+    Defenses in Summary
+    
 
 Notice
 ------
