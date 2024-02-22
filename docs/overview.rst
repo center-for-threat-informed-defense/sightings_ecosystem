@@ -1,5 +1,9 @@
 Overview
-=========
+########
+
+.. figure:: _static/tid_multi.png
+   :alt: Top 100 techniques in the Sightings data. 
+   :align: center
 
 Time Range: Aug 2021 - Nov 2023
 
@@ -10,6 +14,26 @@ Time Range: Aug 2021 - Nov 2023
 198 Countries
 
 300+ Software Represented
+
+What's in the Data
+-------------------
+In the last paper, we had around 1.1M normalized sightings. This round we have around 1.6M sightings. Consequently, we have nearly twice as many unique techniques this round for analysis. This provides the Center with a more comprehensive view of what techniques are being used in the wild.
+
+Out of 201 core Enterprise techniques, we saw 173 techniques, or 86% of the ATT&CK Framework, in our data. 
+
+.. figure:: _static/overall_tactics.png
+   :alt: Each technique seen in the Sightings data under their corresponding Tactic. 
+   :align: center
+
+When including sub-techniques, we saw 353 out of 625 techniques and sub-techniques, or nearly 57%. This percentage is lower than the overall technique percentage because we tended to only see a small number of sub-techniques per single technique. However, each Tactic was well-represented in our data. 
+
+.. figure:: _static/tactics_barchart.png
+   :alt: Percentage of techniques seen per tactic. 
+   :align: center
+
+Compared to our previous report, we observed some variations across the top 15 techniques. T1059 rose in rank from #2 to #1, and Scheduled Task (T1053), which was the #1 technique last time, didn’t rank in the top 15. Additionally, Proxy (T1090), Masquerading (T1036), Create or Modify System Process (T1543), Hijack Execution Flow (T1574), Non-Application Layer Protocol (T1095), and Signed Binary/Proxy Execution (T1218) were also not seen in our top 15 techniques. 
+While the last Sightings report focused mainly on analyzing the top techniques, this time our data included some new information, allowing for additional analysis. We were able to observe the top techniques by sector, regions, software, platform, and privilege level. We also analyzed the correlation between sectors and regions and how software was used in sectors, platforms, and regions. Overall, over 300 different software was seen in our data. Additionally, 20 sectors and almost all countries were represented. To our surprise, outside of the US, nations in South America represented some of our highest sightings. Out of the sectors, most sightings came from the manufacturing sector - twice as much as the next closest sector. We anticipated a more uniform distribution across sectors or the highest sightings from a sector that cyber threat intelligence tends to report on, like the Professional, Scientific, and Technical Services or Information sectors. While we collected sightings from multiple platforms, the vast majority still came from Windows environments. Similarly, while we collected sightings from different privilege levels, most only used user permissions. For future reports, we hope to have more sightings from other platforms and privilege levels.
+
 
 Top 15 Techniques
 ------------------
