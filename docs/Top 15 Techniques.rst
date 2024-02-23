@@ -311,3 +311,58 @@ Sensor Mappings for ATT&CK
 
   * - **Winevtx**
     - 2004, 2005, 2006, 2033, 4103, 4625, 4648, 4657, 4660, 4663, 4664, 4670, 4688, 4696, 4700, 4701, 4702, 4726, 4743, 4776, 4946, 4947, 4948
+
+6. User Execution `[T1204] <https://attack.mitre.org/techniques/T1204/>`_
+***********************************************
+Description
+-----------
+
+.. figure:: _static/T1204_breakdown.png
+   :alt: Breakdown of T1070. 
+   :scale: 20%
+   :align: right
+
+
+An adversary may rely upon user actions to gain Initial Access or execute malicious software on a system. Common examples of user execution include phishing and social engineering attacks. Adversaries may send a malicious link, file, or image for a user to open or deceive users into enabling Remote Access Software to give them direct control of the system. 
+
+A majority of sightings did not contain a sub-technique. Less than 1% contained Malicious Link `(T1204.001) <https://attack.mitre.org/techniques/T1204/001/>`_ and Malicious File `(T1204.002) <https://attack.mitre.org/techniques/T1204/002/>`_. Most sightings occurred on Windows-based systems and were almost evenly distributed across countries and sectors. Only a small sub-set included privilege level information and software, with user level privileges and Cobalt Strike seen the most frequently. 
+ 
+
+Prevention
+----------
+NIST lists 13 security controls to mitigate Indicator Removal: 
+
+* AC-4 Information Flow Enforcement (Also mitigates Malicious Link and Malicious File)
+* CA-7 Continuous Monitoring (Also mitigates Malicious Link and Malicious File)
+* CM-2 Baseline Configuration (Also mitigates Malicious Link and Malicious File)
+* CM-6 Configuration Settings (Also mitigates Malicious Link and Malicious File)
+* CM-7 Least Functionality (Also mitigates Malicious File)
+* SC-7 Boundary Protection (Also mitigates Malicious Link and Malicious File)
+* SC-44 Detonation Chambers (Also mitigates Malicious Link and Malicious File)
+* SI-2 Flaw Remediation (Also mitigates Malicious Link)
+* SI-3 Malicious Code Protection (Also mitigates Malicious Link and Malicious File)
+* SI-4 System Monitoring (Also mitigates Malicious Link and Malicious File)
+* SI-7 Software, Firmware, and Information Integrity (Also mitigates Malicious File)
+* SI-8 Spam Protection (Also mitigates Malicious Link and Malicious File)
+* SI-10 Information Input Validation (Also mitigates Malicious File)
+
+
+Detections
+----------
+CAR 
+^^^
+Rules for Malicious File:
+
+* `CAR-2021-05-002: Batch File Write to System32 <https://car.mitre.org/analytics/CAR-2021-05-002/>`_
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 1, 11, 15, 3
+
+  * - **Winevtx**
+    - 4103, 4663, 4688, 4696, 5031, 5154, 5155, 5156, 5157, 5158, 5159
