@@ -113,6 +113,7 @@ Description
 Adversaries may encrypt, encode, or otherwise obfuscate payloads, files, scripts, or commands to avoid detection. Attackers can use T1027 to compress, archive, encrypt, or split payloads into multiple files; password protect or encode portions of files; or obfuscate commands in scripts. T1027 is often combined with Deobfuscate/Decode Files or Information `(T1140) <https://attack.mitre.org/techniques/T1140/>`_, User Execution `(T1204) <https://attack.mitre.org/techniques/T1204//>`_, Command and Scripting Interpreter `(T1059) <https://attack.mitre.org/techniques/T1059/>`_, and others depending on how obfuscation was used during the attack.
 
 A majority of T1027 did not include sub-techniques. This is likely due in part to normalizing our data, which included T1045 and T1066 from previous ATT&CK versions, to T1027. The most observed sub-technique was Software Packing `(T1027.002) <https://attack.mitre.org/techniques/T1027/002/>`_. Adversaries use this sub-technique to evade detection of their code, particularly from signature-based detections. We also saw a small amount of the following sub-techniques:
+
 * HTML Smuggling `(T1027.006) <https://attack.mitre.org/techniques/T1027/006/>`_ 
 * Binary Padding `(T1027.001) <https://attack.mitre.org/techniques/T1027/001/>`_ 
 * Steganography `(T1027.003) <https://attack.mitre.org/techniques/T1027/003/>`_ 
@@ -327,7 +328,6 @@ An adversary may rely upon user actions to gain Initial Access or execute malici
 
 A majority of sightings did not contain a sub-technique. Less than 1% contained Malicious Link `(T1204.001) <https://attack.mitre.org/techniques/T1204/001/>`_ and Malicious File `(T1204.002) <https://attack.mitre.org/techniques/T1204/002/>`_. Most sightings occurred on Windows-based systems and were almost evenly distributed across countries and sectors. Only a small sub-set included privilege level information and software, with user level privileges and Cobalt Strike seen the most frequently. 
  
-
 Prevention
 ----------
 NIST lists 13 security controls to mitigate Indicator Removal: 
@@ -345,7 +345,6 @@ NIST lists 13 security controls to mitigate Indicator Removal:
 * SI-7 Software, Firmware, and Information Integrity (Also mitigates Malicious File)
 * SI-8 Spam Protection (Also mitigates Malicious Link and Malicious File)
 * SI-10 Information Input Validation (Also mitigates Malicious File)
-
 
 Detections
 ----------
@@ -366,3 +365,577 @@ Sensor Mappings for ATT&CK
 
   * - **Winevtx**
     - 4103, 4663, 4688, 4696, 5031, 5154, 5155, 5156, 5157, 5158, 5159
+
+7. Hide Artifacts `[T1564] <https://attack.mitre.org/techniques/T1564/>`_
+***********************************************
+Description
+-----------
+
+.. figure:: _static/T1564_breakdown.png
+   :alt: Breakdown of T1564. 
+   :scale: 20%
+   :align: right
+
+
+Adversaries may attempt to hide artifacts, such as files, user accounts, or directories, to evade detection. They may exploit operating system features to hide the artifacts or use virtualization to create isolated computing regions to avoid common security tools and configurations. 
+
+A majority of T1564 sightings did not include sub-techniques. This is likely due in part to normalizing our data, which included T1143 and T1158 from previous ATT&CK versions, to T1564. The most observed sub-technique was Hidden Window `(T1564.003) <https://attack.mitre.org/techniques/T1564/003/>`_. Adversaries can use this technique to hide activities from plain sight. The second most-observed sub-technique was NFTS File Attributes `(T1564.004) <https://attack.mitre.org/techniques/T1564/004/>`_. Adversaries can exploit the file attribute metadata to hide malicious data. The following sub-techniques comprise less than 2% of T1564 sightings: 
+
+* Hidden Files and Directories `(T1564.001) <https://attack.mitre.org/techniques/T1564/001/>`_
+* Email Hiding Rules `(T1564.008) <https://attack.mitre.org/techniques/T1564/008/>`_
+* Hidden Users `(T1564.002) <https://attack.mitre.org/techniques/T1564/002/>`_
+
+T1564 occurred mostly on Windows-based systems and was about evenly distributed across countries and sectors. Only a small sub-set of sightings contained privilege levels and software information. However, it followed the overall data trend, with user-level permissions and Heodo being the most observed privilege levels and software, respectively. 
+ 
+Prevention
+----------
+NIST lists 3 security controls to mitigate Hidden Window `(T1564.003) <https://attack.mitre.org/techniques/T1564/003/>`_: 
+
+* CM-7 Least Functionality (Also mitigates Email Hiding Rules and Hidden Users)
+* SI-7 Software, Firmware, and Information Integrity (Also mitigates NTFS File Attributes and Email Hiding Rules)
+* SI-10 Information Input Validation
+
+NIST lists 5 security controls to mitigate NFTS File Attributes `(T1564.004) <https://attack.mitre.org/techniques/T1564/004/>`_:
+
+* AC-3 Access Enforcement
+* AC-16 Security and Privacy Attributes
+* CA-7 Continuous Monitoring
+* SI-3 Malicious Code Protection (also mitigates Email Hiding Rules)
+* SI-4 System Monitoring (Also mitigates Email Hiding Rules and Hidden Users)
+
+NIST lists 4 security controls to mitigate Email Hiding Rules `(T1564.008) <https://attack.mitre.org/techniques/T1564/008/>`_:
+
+* AC-4 Information Flow Enforcement
+* CM-3 Configuration Change Control
+* CM-5 Access Restrictions for Change
+* IR-5 Incident Monitoring
+
+NIST lists 1 security controls to mitigate Hidden Users `(T1564.002) <https://attack.mitre.org/techniques/T1564/002/>`_:
+
+* CM-6 Configuration Settings
+
+
+
+Detections
+----------
+CAR 
+^^^
+Rules for NTFS File Attributes: 
+
+* `CAR-2020-08-001: NTFS Alternate Data Stream Execution – System Utilities <https://car.mitre.org/analytics/CAR-2020-08-001/>`_
+* `CAR-2020-08-002: NTFS Alternate Data Stream Execution - LOLBAS <https://car.mitre.org/analytics/CAR-2020-08-002/>`_
+
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 1, 11, 13, 14, 15, 2
+
+  * - **Winevtx**
+    - 4103, 4104, 4657, 4663, 4664, 4670, 4674, 4688, 4696, 4697, 4720, 4741
+
+8. Process Injection `[T1055] <https://attack.mitre.org/techniques/T1055/>`_
+***********************************************
+Description
+-----------
+
+.. figure:: _static/T1055_breakdown.png
+   :alt: Breakdown of T1055. 
+   :scale: 20%
+   :align: right
+
+Adversaries may inject code into live processes to access the process’s memory or elevate privileges. There are several ways to inject code into other processes, many of which are platform specific. By performing process injection, adversaries are able to hide inside legitimate processes to evade process-based defenses. 
+
+A majority of T1055 sightings did not include sub-techniques. This is likely due in part to normalizing our data, which included T1093 from previous ATT&CK versions, to T1055. The following sub-techniques comprise less than 2% of T1055 sightings: 
+
+* Dynamic-link Library Injection `(T1055.001) <https://attack.mitre.org/techniques/T1055/001/>`_
+* Portable Executable Injection `(T1055.002) <https://attack.mitre.org/techniques/T1055/002//>`_
+* Thread Execution Hijacking `(T1055.003) <https://attack.mitre.org/techniques/T1055/003/>`_
+* Process Hollowing `(T1055.012) <https://attack.mitre.org/techniques/T1055/012/>`_
+
+This technique occurred consistently throughout 2022 and 2023. T1055 occurred mostly on Windows-based systems and was about evenly distributed across countries. It followed the overall data trend, with user-level permissions and Heodo being the most observed privilege levels and software, respectively. Notably, it deviated from the overall trend by occurring more frequently in the Professional, Scientific, and Technical Services sector.    
+ 
+Prevention
+----------
+NIST lists 12 security controls to mitigate Process Injection: 
+
+* AC-2 Account Management
+* AC-3 Access Enforcement
+* AC-5 Separation of Duties
+* AC-6 Least Privilege (Also mitigates Portable Executable Injection, Thread Execution Hijacking, Process Hollowing, and Dynamic-link Library Injection)
+* CM-5 Access Restrictions for Change
+* CM-6 Configuration Settings
+* IA-2 Identification and Authentication (organizational Users)
+* SC-7 Boundary Protection (Also mitigates Portable Executable Injection, Thread Execution Hijacking, Process Hollowing, and Dynamic-link Library Injection)
+* SC-18 Mobile Code (Also mitigates Portable Executable Injection, Thread Execution Hijacking, Process Hollowing, and Dynamic-link Library Injection)
+* SI-2 Flaw Remediation (Also mitigates Portable Executable Injection, Thread Execution Hijacking, Process Hollowing, and Dynamic-link Library Injection)
+* SI-3 Malicious Code Protection (Also mitigates Portable Executable Injection, Thread Execution Hijacking, Process Hollowing, and Dynamic-link Library Injection)
+* SI-4 System Monitoring (Also mitigates Portable Executable Injection, Thread Execution Hijacking, Process Hollowing, and Dynamic-link Library Injection)
+
+Detections
+----------
+CAR 
+^^^
+Rules for Dynamic-link Library Injection:
+
+* `CAR-2013-10-002: DLL Injection via Load Library <https://car.mitre.org/analytics/CAR-2013-10-002/>`_
+* `CAR-2020-11-003: DLL Injection with Mavinject <https://car.mitre.org/analytics/CAR-2020-11-003/>`_
+
+Rules for Process Hollowing:
+
+* `CAR-2020-11-004: Processes Started From Irregular Parent <https://car.mitre.org/analytics/CAR-2020-11-004/>`_
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 10, 2, 30, 7, 8
+
+  * - **Winevtx**
+    - 4656, 4663, 4664, 4670
+
+9. OS Credential Dumping `[T1003] <https://attack.mitre.org/techniques/T1003/>`_
+***********************************************
+Description
+-----------
+
+.. figure:: _static/T1003_breakdown.png
+   :alt: Breakdown of T1003. 
+   :scale: 20%
+   :align: right
+
+Adversaries can use dumped credentials to obtain account login and credential material to access restricted information or perform Lateral Movement. 
+
+A majority of sightings did not contain sub-techniques. The following sub-techniques comprise less than 3% of T1003 sightings: 
+
+* LSASS Memory `(T1003.001) <https://attack.mitre.org/techniques/T1003/001/>`_
+* Proc Filesystem `(T1003.007) <https://attack.mitre.org/techniques/T1003/007/>`_
+* NTDS `(T1003.003) <https://attack.mitre.org/techniques/T1003/003/>`_
+* /etc/passwd and /etc/shadow `(T1003.008) <https://attack.mitre.org/techniques/T1003/008/>`_
+* DCSync `(T1003.006) <https://attack.mitre.org/techniques/T1003/006/>`_
+* Cached Domain Credentials `(T1003.005) <https://attack.mitre.org/techniques/T1003/005/>`_
+* Proc Filesystem `(T1003.007) <https://attack.mitre.org/techniques/T1003/007/>`_
+* LSA Secrets `(T1003.004) <https://attack.mitre.org/techniques/T1003/004/>`_
+* Security Account Manager `(T1003.002) <https://attack.mitre.org/techniques/T1003/002/>`_
+
+Most T1003 sightings were received during 2022 and dropped off in 2023. This could be due to random statistical noise in the data, or attackers using this technique less in the wild. Most sightings occurred on Windows-based systems and user level privileges. Only a small sub-set contained location and sector information, with most sightings occurring in the US. Notably, T1003 deviated from overall trends on the data, with AgentTesla as the most frequently seen software and Information as the most frequently seen sector.    
+ 
+Prevention
+----------
+NIST lists 22 security controls to mitigate OS Credential Dumping: 
+
+* AC-2 Account Management (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* AC-3 Access Enforcement (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* AC-4 Information Flow Enforcement (Also mitigates Cached Domain Credentials, DCSync, and LSASS Memory)
+* AC-5 Separation of Duties (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* AC-6 Least Privilege (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* AC-16 Security and Privacy Attributes (Also mitigates NTDS)
+* CA-7 Continuous Monitoring (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* CM-2 Baseline Configuration (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* CM-5 Access Restrictions for Change (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* CM-6 Configuration Settings (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* CM-7 Least Functionality (Also mitigates Cached Domain Credentials, LSASS Memory, and Security Account Manager)
+* CP-9 System Backup (Also mitigates NTDS)
+* IA-2 Identification and Authentication (organizational Users) (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* IA-4 Identifier Management (Also mitigates Cached Domain Credentials and DCSync)
+* IA-5 Authenticator Management (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* SC-28 Protection of Information at Rest (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* SC-39 Process Isolation (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* SI-2 Flaw Remediation (Also mitigates LSASS Memory)
+* SI-3 Malicious Code Protection (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* SI-4 System Monitoring (Also mitigates LSA Secrets, Cached Domain Credentials, DCSync, Proc Filesystem, /etc/passwd and /etc/shadow, LSASS Memory, Security Account Manager, and NTDS)
+* SI-7 Software, Firmware, and Information Integrity (Also mitigates NTDS)
+* SI-12 Information Management and Retention (Also mitigates NTDS)
+
+NIST lists 2 security controls to mitigate LSASS Memory `(T1003.001) <https://attack.mitre.org/techniques/T1003/001/>`_:
+
+* SC-3 Security Function Isolation 
+* SI-16 Memory Protection
+
+Detections
+----------
+CAR 
+^^^
+Rules for LSASS Memory:
+
+* `CAR-2013-07-001: Suspicious Arguments <https://car.mitre.org/analytics/CAR-2013-07-001/>`_
+* `CAR-2019-04-004: Credential Dumping via Mimikatz <https://car.mitre.org/analytics/CAR-2019-04-004/>`_
+* `CAR-2019-07-002: Lsass Process Dump via Procdump <https://car.mitre.org/analytics/CAR-2019-07-002/>`_
+* `CAR-2019-08-001: Credential Dumping via Windows Task Manager <https://car.mitre.org/analytics/CAR-2019-08-001/>`_
+* `CAR-2021-05-011: Create Remote Thread into LSASS <https://car.mitre.org/analytics/CAR-2021-05-011/>`_
+
+Rules for NTDS:
+
+* `CAR-2019-08-002: Active Directory Dumping via NTDSUtil <https://car.mitre.org/analytics/CAR-2019-08-002/>`_
+* `CAR-2020-05-001: MiniDump of LSASS <https://car.mitre.org/analytics/CAR-2020-05-001/>`_
+
+Rules for Security Account Manager:
+
+* `CAR-2013-04-002: Quick execution of a series of suspicious commands <https://car.mitre.org/analytics/CAR-2013-04-002/>`_
+
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 1, 10, 9
+
+  * - **Winevtx**
+    - 4103, 4656, 4661, 4662, 4663, 4688, 4690, 4696, 4773, 4932
+
+10. Remote Services `[T1021] <https://attack.mitre.org/techniques/T1021/>`_
+***********************************************
+Description
+-----------
+
+.. figure:: _static/T1021_breakdown.png
+   :alt: Breakdown of T1021. 
+   :scale: 20%
+   :align: right
+
+Adversaries may use Remote Services, coupled with Valid Accounts (T1078), to exploit services that accept remote connections, such as RDP, telnet, SSH, or VNC. Some platforms also have native remote management utilities, such as the Apple Remote Desktop on macOS, that adversaries can also use for remote code execution. If the servers and workstations are joined to a domain, adversaries could use a single set of login credentials to move laterally and access additional systems.  
+
+A majority of T1021 sightings did not include sub-techniques. This is likely due in part to normalizing our data, which included T1175 from previous ATT&CK versions, to T1021. The most observed sub-technique was Windows Remote Management `(T1021.006) <https://attack.mitre.org/techniques/T1021/006/>`_. The following sub-techniques comprise less than 3% of T1021 Sightings:
+
+* Remote Desktop Protocol `(T1021.001) <https://attack.mitre.org/techniques/T1021/001/>`_
+* SMB/Windows Admin Shares `(T1021.002) <https://attack.mitre.org/techniques/T1021/002/>`_
+* Distributed Component Object Model `(T1021.003) <https://attack.mitre.org/techniques/T1021/003/>`_
+* SSH `(T1021.004) <https://attack.mitre.org/techniques/T1021/004/>`_
+
+Most T1021 sightings occurred on Windows-based systems and used user level permissions; however, we had a couple thousand nix sightings, which is unusual but unsurprising since many intrusions use remote services. Only a small sub-set of sightings contained location and sector information, with most occurring in the US and in the Professional, Scientific, and Technical Services sector. Notably, T1021 deviated from overall trends on the data, with SnakeKeylogger as the most frequently seen software.    
+ 
+Prevention
+----------
+NIST lists 12 security controls to mitigate Remote Services:
+
+* AC-2 Account Management (Also mitigates Remote Desktop Protocol, SMB/Windows Admin Shares, Distributed Component Object Model, SSH, and Windows Remote Management)
+* AC-3 Access Enforcement (Also mitigates Remote Desktop Protocol, SMB/Windows Admin Shares, Distributed Component Object Model, SSH, and Windows Remote Management)
+* AC-5 Separation of Duties (Also mitigates Remote Desktop Protocol, SMB/Windows Admin Shares, Distributed Component Object Model, SSH, and Windows Remote Management)
+* AC-6 Least Privilege (Also mitigates Remote Desktop Protocol, SMB/Windows Admin Shares, Distributed Component Object Model, SSH, and Windows Remote Management)
+* AC-7 Unsuccessful Logon Attempts (Also mitigates Remote Desktop Protocol and SSH)
+* AC-17 Remote Access (Also mitigates Remote Desktop Protocol, SMB/Windows Admin Shares, Distributed Component Object Model, SSH, and Windows Remote Management)
+* AC-20 Use of External Systems (Also mitigates Remote Desktop Protocol and SSH)
+* CM-5 Access Restrictions for Change (Also mitigates Remote Desktop Protocol, SMB/Windows Admin Shares, Distributed Component Object Model, SSH, and Windows Remote Management)
+* CM-6 Configuration Settings (Also mitigates Remote Desktop Protocol, SMB/Windows Admin Shares, Distributed Component Object Model, SSH, and Windows Remote Management)
+* IA-2 Identification and Authentication (organizational Users) (Also mitigates Remote Desktop Protocol, SMB/Windows Admin Shares, Distributed Component Object Model, SSH, and Windows Remote Management)
+* IA-5 Authenticator Management (Also mitigates Remote Desktop Protocol and SSH)
+* SI-4 System Monitoring (Also mitigates Remote Desktop Protocol, SMB/Windows Admin Shares, Distributed Component Object Model, SSH, and Windows Remote Management)
+
+NIST lists 12 security controls to mitigate Remote Desktop Protocol `(T1021.001) <https://attack.mitre.org/techniques/T1021/001/>`_:
+
+* AC-4 Information Flow Enforcement (Also mitigates SMB/Windows Admin Shares, Distributed Component Object Model, and Windows Remote Management)
+* AC-11 Device Lock
+* AC-12 Session Termination
+* CA-8 Penetration Testing
+* CM-2 Baseline Configuration (Also mitigates SMB/Windows Admin Shares, Distributed Component Object Model, and Windows Remote Management)
+* CM-7 Least Functionality (Also mitigates SMB/Windows Admin Shares, Distributed Component Object Model, and Windows Remote Management)
+* CM-8 System Component Inventory (Also mitigates Distributed Component Object Model, SSH, and Windows Remote Management)
+* IA-4 Identifier Management
+* IA-6 Authentication Feedback
+* RA-5 Vulnerability Monitoring and Scanning (Also mitigates Distributed Component Object Model, SSH, and Windows Remote Management)
+* SC-7 Boundary Protection (Also mitigates SMB/Windows Admin Shares, Distributed Component Object Model, and Windows Remote Management)
+* SC-46 Cross Domain Policy Enforcement (Also mitigates Distributed Component Object Model and Windows Remote Management)
+
+NIST lists 3 security controls to mitigate SMB/Windows Admin Shares `(T1021.002) <https://attack.mitre.org/techniques/T1021/002/>`_:
+
+* CA-7 Continuous Monitoring
+* SI-10 Information Input Validation
+* SI-15 Information Output Filtering
+
+NIST lists 3 security controls to mitigate Distributed Component Object Model `(T1021.003) <https://attack.mitre.org/techniques/T1021/003/>`_:
+
+* SC-3 Security Function Isolation
+* SC-18 Mobile Code
+* SI-3 Malicious Code Protection
+
+
+Detections
+----------
+CAR 
+^^^
+Rules for core technique:
+
+* `CAR-2013-07-001: Suspicious Arguments <https://car.mitre.org/analytics/CAR-2013-07-001/>`_
+
+Rules for Remote Desktop Protocol:
+
+* `CAR-2013-07-002: RDP Connection Detection <https://car.mitre.org/analytics/CAR-2013-07-002/>`_
+* `CAR-2013-10-001: User Login Activity Monitoring <https://car.mitre.org/analytics/CAR-2013-10-001/>`_
+* `CAR-2016-04-005: Remote Desktop Logon <https://car.mitre.org/analytics/CAR-2016-04-005/>`_
+
+Rules for SMB/Windows Admin Shares:
+
+* `CAR-2013-01-003: SMB Events Monitoring <https://car.mitre.org/analytics/CAR-2013-01-003/>`_
+* `CAR-2013-04-002: Quick execution of a series of suspicious commands <https://car.mitre.org/analytics/CAR-2013-04-002/>`_
+* `CAR-2013-05-003: SMB Write Request <https://car.mitre.org/analytics/CAR-2013-05-003/>`_
+* `CAR-2013-05-005: SMB Copy and Execution <https://car.mitre.org/analytics/CAR-2013-05-005/>`_
+* `CAR-2014-05-001: RPC Activity <https://car.mitre.org/analytics/CAR-2014-05-001/>`_
+
+Rules for Distributed Component Object Model:
+
+* `CAR-2014-05-001: RPC Activity <https://car.mitre.org/analytics/CAR-2014-05-001/>`_
+
+Rules for Windows Remote Management: 
+
+* `CAR-2014-05-001: RPC Activity <https://car.mitre.org/analytics/CAR-2014-05-001/>`_
+* `CAR-2014-11-004: Remote PowerShell Sessions <https://car.mitre.org/analytics/CAR-2014-11-004/>`_
+* `CAR-2014-11-006: Windows Remote Management (WinRM) <https://car.mitre.org/analytics/CAR-2014-11-006/>`_
+
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 1, 3, 7
+
+  * - **Winevtx**
+    - 4103, 4624, 4688, 4696, 4778, 4964, 5031, 5140, 5145, 5154, 5155, 5156, 5157, 5158, 5159
+
+11. Data Encrypted for Impact `[T1486] <https://attack.mitre.org/techniques/T1486/>`_
+***********************************************
+Description
+-----------
+Adversaries may encrypt data on target systems to interrupt availability to system and network resources. In some cases, File and Directory Permissions Modification (T1222) or System Shutdown/Reboot (T1529) are necessary to access targeted file types. To maximize impact, malware with wormlike properties may be used in conjunction with Valid Accounts (T1078), OS Credential Dumping (T1003), or SMB/Windows Admin Shares (T1021.002). These attacks may be used by adversaries for monetary gain or data destruction. 
+
+Most T1486 events occurred in 2022, on Windows-based platforms, with user level permissions. Notably, T1003 deviated from overall trends on the data, with AgentTesla as the most frequently seen software. We lacked a meaningful amount of data for location or sector analysis.  
+ 
+Prevention
+----------
+NIST lists 11 security controls to mitigate Data Encrypted for Impact:
+
+* AC-3 Access Enforcement
+* AC-6 Least Privilege
+* CM-2 Baseline Configuration
+* CP-2 Contingency Plan
+* CP-6 Alternate Storage Site
+* CP-7 Alternate Processing Site
+* CP-9 System Backup
+* CP-10 System Recovery and Reconstitution
+* SI-3 Malicious Code Protection
+* SI-4 System Monitoring
+* SI-7 Software, Firmware, and Information Integrity
+
+Detections
+----------
+CAR 
+^^^
+None
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 1, 11, 15, 2
+
+  * - **Winevtx**
+    - 4103, 4663, 4670, 4688, 4696, 5140, 5145
+
+12. Replication Through Removable Media `[T1091] <https://attack.mitre.org/techniques/T1091/>`_
+***********************************************
+Description
+-----------
+Adversaries may gain initial access to systems by modifying systems that format removable media, modifying the media’s firmware, or copying malware to removable media and exploiting Autorun features on a system. Lateral movement can occur when stored executable files are modified or renamed to appear legitimate. Mobile devices can also be targeted to infect and spread malware when connected to a system.
+
+We observed a significant increase of T1091 sightings in February 2023, which has remained. Nearly all sightings occurred on Windows-based platforms. T1091 was most frequently seen in India and in the Professional, Scientific, and Technical Services sector, but was otherwise almost evenly distributed across other regions and sectors. Only a small sub-set of sightings contained privilege level and software information. While T1091 aligned with the overall data trend of mostly user level permissions, it deviated from software trends, with njrat as the most frequently seen software. 
+  
+Prevention
+----------
+NIST lists 10 security controls to mitigate Distributed Component Object Model: 
+
+* AC-3 Access Enforcement
+* AC-6 Least Privilege
+* CM-2 Baseline Configuration
+* CM-6 Configuration Settings
+* CM-8 System Component Inventory
+* MP-7 Media Use
+* RA-5 Vulnerability Monitoring and Scanning
+* SC-41 Port and I/O Device Access
+* SI-3 Malicious Code Protection
+* SI-4 System Monitoring
+
+
+Detections
+----------
+CAR 
+^^^
+None
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 1, 11, 15, 9
+
+  * - **Winevtx**
+    - 4656, 4661, 4663, 4688, 4690, 4696, 6416, 6423, 6424
+
+13. System Information Discovery `[T1082] <https://attack.mitre.org/techniques/T1082/>`_
+***********************************************
+Description
+-----------
+An adversary may use information about the operating system and hardware to shape code development and follow-on behaviors. These attacks can use native tools, such as systeminfo on Windows, the systemsetup configuration tool on macOS, or the command-line interface of a network device, to gather detailed system information. Adversaries can use this information, coupled with other forms of Discovery or Reconnaissance, to avoid detections and conduct more targeted attacks. 
+
+Sightings for T1082 occurred mostly on Windows-based platforms; however, we had a couple thousand Nix sightings, which is unusual but unsurprising since many networks contain at least some Nix systems which would be identified during discovery efforts. T1082 followed the overall data trend, with user-level permissions and Heodo being the most observed privilege levels and software, respectively. We lacked a meaningful amount of data for location or sector analysis. 
+
+  
+Prevention
+----------
+NIST lists no security controls to mitigate System Information Discovery.
+
+Detections
+----------
+CAR 
+^^^
+Rules for the core technique: 
+
+* `CAR-2013-04-002: Quick execution of a series of suspicious commands <https://car.mitre.org/analytics/CAR-2013-04-002/>`_
+* `CAR-2016-03-001: Host Discovery Commands <https://car.mitre.org/analytics/CAR-2016-03-001/>`_
+
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 1
+
+  * - **Winevtx**
+    - 4656, 4661, 4663, 4688, 4690, 4696, 6416, 6423, 6424
+
+14. Windows Management Instrumentation `[T1047] <https://attack.mitre.org/techniques/T1047/>`_
+***********************************************
+Description
+-----------
+Windows Management Instrumentation (WMI) is a native Windows administration feature used to access Windows system components. Adversaries may abuse WMI to interact with local systems to execute malicious commands and payloads. To interact with remote systems, adversaries can use WMI in conjunction with Remote Services, such as Distributed Component Object Model (DCOM) and Windows Remote Management (WinRM).
+
+Most sightings for T1047 occurred in 2022, on Windows-based platforms, with user level permissions. We saw a significant reduction in sightings in 2023, likely the result of some change in the data provided to us. Only a small sub-set of sightings contained location and sector information. However, it followed the overall data trend, with the US and Manufacturing being the most observed location and sector, respectively. Notably, T1047 deviated from overall software trends, with RedLineStealer as the most frequently seen software.
+ 
+Prevention
+----------
+NIST lists 18 security controls to mitigate Windows Management Instrumentation: 
+
+* AC-2 Account Management
+* AC-3 Access Enforcement
+* AC-5 Separation of Duties
+* AC-6 Least Privilege
+* AC-17 Remote Access
+* CM-2 Baseline Configuration
+* CM-5 Access Restrictions for Change
+* CM-6 Configuration Settings
+* CM-7 Least Functionality
+* IA-2 Identification and Authentication (organizational Users)
+* RA-5 Vulnerability Monitoring and Scanning
+* SC-3 Security Function Isolation
+* SC-34 Non-modifiable Executable Programs
+* SI-2 Flaw Remediation
+* SI-3 Malicious Code Protection 
+* SI-4 System Monitoring
+* SI-7 Software, Firmware, and Information Integrity
+* SI-16 Memory Protection
+
+Detections
+----------
+CAR 
+^^^
+Rules for the core technique:
+
+* `CAR-2014-11-007: Remote Windows Management Instrumentation (WMI) over RPC <https://car.mitre.org/analytics/CAR-2014-11-007/>`_
+* `CAR-2014-12-001: Remotely Launched Executables via WMI <https://car.mitre.org/analytics/CAR-2014-12-001/>`_
+* `CAR-2016-03-002: Create Remote Process via WMIC <https://car.mitre.org/analytics/CAR-2016-03-002/>`_
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 1, 3
+
+  * - **Winevtx**
+    - 4103, 4688, 4696, 5031, 5154, 5155, 5156, 5157, 5158, 5159
+
+15. Impair Defenses `[T1562] <https://attack.mitre.org/techniques/T1562/>`_
+***********************************************
+Description
+-----------
+
+.. figure:: _static/T1562_breakdown.png
+   :alt: Breakdown of T1562. 
+   :scale: 20%
+   :align: right
+
+Adversaries may maliciously modify components of a victim’s environment to hinder or disable preventative and defensive mechanisms. They may also target event aggregation and analysis mechanisms to impede auditing and detection efforts. These attempts can span native defenses and supplemental capabilities installed on a system.
+
+A majority of T1562 sightings did not include sub-techniques. This is likely due in part to normalizing our data, which included T1089 from previous ATT&CK versions, to T1562. The most observed sub-technique was Disable or Modify Tools `(T1562.001) <https://attack.mitre.org/techniques/T1562/001/>`_. Adversaries may use this sub-technique to stop defensive services, edit or delete Registry keys, or modify configuration files. The second most-observed sub-technique was Disable or Modify System Firewall `(T1562.004) <https://attack.mitre.org/techniques/T1562/004/>`_. The sub-technique allows adversaries to perform C2 communications, data exfiltration, or lateral movement. Less than 6% of sightings were Disable Windows Event Logging `(T1562.002) <https://attack.mitre.org/techniques/T1562/002/>`_, which reduces the amount of evidence left by adversaries and hinders incident response and forensics efforts.
+
+Most T1562 sightings occurred on Windows-based systems and were almost evenly distributed across the top countries. They followed the overall data trend, with user-level permissions as the most observed privilege level. Notably, T1562 deviated from the overall data trends with Professional, Scientific, and Technical Services and Tofsee as the most observed sector and software, respectively.
+ 
+Prevention
+----------
+NIST lists 16 security controls to mitigate Impair Defenses:
+
+* AC-2 Account Management (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* AC-3 Access Enforcement (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* AC-5 Separation of Duties (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* AC-6 Least Privilege (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* CA-7 Continuous Monitoring (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* CA-8 Penetration Testing
+* CM-2 Baseline Configuration (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* CM-5 Access Restrictions for Change (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* CM-6 Configuration Settings (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* CM-7 Least Functionality (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* IA-2 Identification and Authentication (organizational Users) (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* IA-4 Identifier Management
+* RA-5 Vulnerability Monitoring and Scanning
+* SI-3 Malicious Code Protection (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* SI-4 System Monitoring (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+* SI-7 Software, Firmware, and Information Integrity (Also mitigates Disable or Modify Tools, Disable Windows Event Logging, and Disable or Modify System Firewall)
+
+Detections
+----------
+CAR 
+^^^
+Rules for Disable or Modify Tools:
+
+* `CAR-2013-04-002: Quick execution of a series of suspicious commands <https://car.mitre.org/analytics/CAR-2013-04-002/>`_
+* `CAR-2016-04-003: User Activity from Stopping Windows Defensive Services <https://car.mitre.org/analytics/CAR-2016-04-003/>`_
+* `CAR-2021-01-007: Detecting Tampering of Windows Defender Command Prompt <https://car.mitre.org/analytics/CAR-2021-01-007/>`_
+
+Rules for Disable Windows Event Logging:
+
+* `CAR-2022-03-001: Disable Windows Event Logging <https://car.mitre.org/analytics/CAR-2022-03-001/>`_
+
+
+Sensor Mappings for ATT&CK 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+  :widths: 20 50
+  :header-rows: 0
+
+  * - **Sysmon**
+    - 1, 12, 13, 14, 4, 5, 6
+
+  * - **Winevtx**
+    - 1100, 1101, 1102, 1104, 2004, 2005, 2006, 2033, 4103, 4104, 4616, 4657, 4660, 4670, 4688, 4689, 4696, 4703, 4717, 4718, 4722, 4723, 4724, 4725, 4738, 4740, 4742, 4767, 4781, 4946, 4947, 4948, 5025, 5034, 6005, 6006
