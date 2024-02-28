@@ -121,7 +121,7 @@ Sector
    :alt: Top 5 Techniques for the Top 10 Software. 
    :align: center
 
-By viewing the top techniques used by different software, we can gain insights into how adversaries are using each software to conduct their attacks. Within our data, about half of the top techniques used by software are in our top 15 techniques. These techniques comprise nearly all of our sightings. For T1059, ¬¬its sub-techniques are observed being used by Heodo, Formbook, and GCleaner. The other top techniques seen were used by only one or two software. These are used by attackers for Discovery, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Collection, Command and Control (C2), and Impact Tactics. Cyber defenders can use this breakdown to gain insight into the techniques, corresponding defenses, and NIST controls observed by specific software.
+By viewing the top techniques used by different software, we can gain insights into how adversaries are using each software to conduct their attacks. Within our data, about half of the top techniques used by software are in our top 15 techniques. These techniques comprise nearly all of our sightings. For T1059, its sub-techniques are observed being used by Heodo, Formbook, and GCleaner. The other top techniques seen were used by only one or two software. These are used by attackers for Discovery, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Collection, Command and Control (C2), and Impact Tactics. Cyber defenders can use this breakdown to gain insight into the techniques, corresponding defenses, and NIST controls observed by specific software.
 
 Platform
 ---------
