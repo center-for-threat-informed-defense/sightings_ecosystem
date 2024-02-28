@@ -7,5 +7,5 @@ About the Center for Threat Informed Defense
 The Center is a non-profit, privately funded research and development organization operated by MITRE Engenuity. The Center’s mission is to advance the state of the art and the state of the practice in threat-informed defense globally. Comprised of participant organizations from around the globe with highly sophisticated security teams, the Center builds on MITRE ATT&CK®, an important foundation for threat informed defense used by security teams and vendors in their enterprise security operations. Because the Center operates for the public good, outputs of its research and development are available publicly and for the benefit of all.
 
 For more information:
-`Center for Threat-Informed Defense <https://ctid.mitre-engenuity.org/>`_
+`Center for Threat-Informed Defense <https://ctid.mitre-engenuity.org/>`_;
 ctid@mitre-engenuity.org
