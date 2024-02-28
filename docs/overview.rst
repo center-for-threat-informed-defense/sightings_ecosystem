@@ -5,6 +5,8 @@ Overview
    :alt: Top 100 techniques in the Sightings data. 
    :align: center
 
+   Top 100 Techniques in the Sightings Data.
+
 Time Range: Aug 2021 - Nov 2023
 
 1.6M+ Sightings
@@ -25,11 +27,15 @@ Out of 201 core Enterprise techniques, we saw 173 techniques, or 86% of the ATT&
    :alt: Each technique seen in the Sightings data under their corresponding Tactic. 
    :align: center
 
+   Sightings Techniques under their corresponding Tactic.
+
 When including sub-techniques, we saw 353 out of 625 techniques and sub-techniques, or nearly 57%. This percentage is lower than the overall technique percentage because we tended to only see a small number of sub-techniques per single technique. However, each Tactic was well-represented in our data. 
 
 .. figure:: _static/tactics_barchart.png
    :alt: Percentage of techniques seen per tactic. 
    :align: center
+
+   Percentage of Techniques seen per Tactic.
 
 Compared to our previous report, we observed some variations across the top 15 techniques. T1059 rose in rank from #2 to #1, and Scheduled Task (T1053), which was the #1 technique last time, didn’t rank in the top 15. Additionally, Proxy (T1090), Masquerading (T1036), Create or Modify System Process (T1543), Hijack Execution Flow (T1574), Non-Application Layer Protocol (T1095), and Signed Binary/Proxy Execution (T1218) were also not seen in our top 15 techniques. 
 While the last Sightings report focused mainly on analyzing the top techniques, this time our data included some new information, allowing for additional analysis. We were able to observe the top techniques by sector, regions, software, platform, and privilege level. We also analyzed the correlation between sectors and regions and how software was used in sectors, platforms, and regions. Overall, over 300 different software was seen in our data. Additionally, 20 sectors and almost all countries were represented. To our surprise, outside of the US, nations in South America represented some of our highest sightings. Out of the sectors, most sightings came from the manufacturing sector - twice as much as the next closest sector. We anticipated a more uniform distribution across sectors or the highest sightings from a sector that cyber threat intelligence tends to report on, like the Professional, Scientific, and Technical Services or Information sectors. While we collected sightings from multiple platforms, the vast majority still came from Windows environments. Similarly, while we collected sightings from different privilege levels, most only used user permissions. For future reports, we hope to have more sightings from other platforms and privilege levels.
@@ -41,6 +47,9 @@ Top 15 Techniques
    :alt: Percentage of the top 15 techniques out of all techniques in our Sightings data.
    :scale: 20%
    :align: right
+
+   Percentage of the Top 15 Techniques.
+   
 Of all techniques observed between 1 August 2021 to 30 November 2023, the top 15 most observed techniques comprise 82 percent of our sightings. This is lower than our last report, where the top 15 techniques comprised 90 percent of all observed techniques. This difference is likely due to the larger data set analyzed for this report, as well as a wider array of unique techniques seen during this timeframe. 
 
 1. Command and Scripting Interpreter `[T1059] <https://attack.mitre.org/techniques/T1059/>`_
@@ -65,6 +74,8 @@ The top 15 Enterprise techniques represent 9 out of 14 ATT&CK Tactics. This demo
    :alt: Top 15 techniques broken down by Tactic. 
    :align: center
 
+   Breakdown of Top 15 Techniques by Tactic.
+
 Top 10 NIST 800-53 Controls
 ----------------------------
 Using the Center’s mappings of the National Institute of Standards and Technology (NIST) Special Publication (SP) 800-53 revision 5 to ATT&CK, we can identify which NIST controls are the most effective in protecting against our top 15 techniques. Overall, Access Control, System and Information Integrity, and Configuration Management controls are the most frequently seen.  
@@ -84,3 +95,5 @@ Using the Center’s mappings of the National Institute of Standards and Technol
    :alt: Top 10 NIST Controls and their coverage of the Top 15 Techniques. 
    :width: 800
    :align: center
+
+   Top 10 NIST Controls and their coverage of the Top 15 Techniques.

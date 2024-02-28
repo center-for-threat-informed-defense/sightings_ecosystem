@@ -32,6 +32,6 @@ We provide a data model to potential contributors that shows the format for subm
 
 .. figure:: _static/data_model.png
    :alt: Our data model for Sightings Ecosystem II.
-   :scale: 80%
    :align: center
    
+   Sightings II Data Model.
