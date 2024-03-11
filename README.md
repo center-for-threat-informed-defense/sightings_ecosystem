@@ -4,14 +4,11 @@ This project is intended to give cyber defenders visibility into what adversarie
 
 You can be a part of the success of this project by contributing your Sightings data and help advance the state of cybersecurity at large. To join us, please email CTID@MITRE-Engenuity.org.
 
-Take a look at our [data model](/data/data_model.md) to have a better understanding of the data we're trying to collect. 
-
-- [Sightings Ecosystem](#sightings-ecosystem)
-  - [Why Sightings?](#why-sightings)
-  - [Call for Contributors](#call-for-contributors)
-  - [Plan of Attack](#plan-of-attack)
-  - [Example sighting of a technique](#example-sighting-of-a-technique)
-  - [Notice](#notice)
+- [Why Sightings?](#why-sightings)
+- [Call for Contributors](#call-for-contributors)
+- [Plan of Attack](#plan-of-attack)
+- [Example sighting of a technique](#example-sighting-of-a-technique)
+- [Notice](#notice)
 
 ## Why Sightings?
 

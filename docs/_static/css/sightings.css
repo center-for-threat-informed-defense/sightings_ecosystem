@@ -1,0 +1,24 @@
+.wy-breadcrumbs {
+    position: relative;
+}
+
+#contribute-button,
+#contribute-button:active,
+#contribute-button:visited {
+    background-color: var(--me-ext-navy);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0;
+    padding: 1.5em;
+    position: absolute;
+    right: 0;
+    top: -2.2em;
+    width: 11em;
+    font-size: 10pt;
+}
+
+#contribute-button:hover {
+    background-color: var(--me-hyperlink);
+}

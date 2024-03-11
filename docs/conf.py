@@ -22,7 +22,7 @@ copyright = "2024, Center for Threat-Informed Defense"
 author = "Center for Threat-Informed Defense"
 
 # The full version, including alpha/beta/rc tags
-version = "v1.0.0"
+version = "v2.0.0"
 release = version
 
 
@@ -56,6 +56,7 @@ html_favicon = "_static/favicon.png"
 html_logo = "_static/ctid_logo_white.png"
 html_css_files = [
     "css/ctid.css",
+    "css/sightings.css",
 ]
 html_copy_source = False
 html_show_sourcelink = False
