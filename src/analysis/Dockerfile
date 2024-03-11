@@ -25,12 +25,10 @@ ENV LC_ALL=C.UTF-8 LANG=C.UTF-8 \
 
 WORKDIR ${APP_DIR}
 
-# Install dependencies
-COPY requirements/analysis-requirements.txt .
-
-RUN --mount=type=cache,target=/root/.cache \
-    python -m pip install -r analysis-requirements.txt
-
+RUN curl -sSL https://install.python-poetry.org/ | python -
+ENV PATH PATH:$HOME/.poetry/bin
+COPY pyproject.toml poetry.lock ./
+RUN poetry install --with analysis
 COPY src/analysis/ .
 
 # create unprivileged service account

@@ -46,7 +46,7 @@ The ATT&CK team is most interested in data from sightings of techniques being ex
 
 ## Notice
 
-Copyright 2021 MITRE Engenuity. Approved for public release. Document number CT0022
+Copyright 2021, 2024 MITRE Engenuity. Approved for public release. Document number CT0022, CT0103.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

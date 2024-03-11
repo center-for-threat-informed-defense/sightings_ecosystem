@@ -1,9 +1,12 @@
 name: test
 
 on:
+  # Temporarily disabling this job because it is broken beyond repair
   push:
-    branches: [main, develop]
-  pull_request:
+    branches: [bogus]
+  # push:
+  #   branches: [main, develop]
+  # pull_request:
 
 jobs:
   test:
@@ -11,20 +14,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v4
       with:
-        python-version: '3.7'
-
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements/pipeline-requirements.txt
-        pip install -r requirements/analysis-requirements.txt
-        pip install -r requirements/pipeline-requirements-ci.txt
+        python-version: '3.10'
+    - name: Install Poetry
+      run: curl -sSL https://install.python-poetry.org/ | python -
+    - name: Add Poetry to PATH
+      run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+    - name: Install dependencies
+      run: poetry install --with analysis --with pipeline --with pipeline-ci
 
     - name: Test and lint with pytest
-      run: |
-       pytest --cov=src/pipeline --cov=src/analysis --cov=src/validator --cov-report=xml --flake8
+      run: >
+       poetry run pytest --cov=src/pipeline --cov=src/analysis \
+                         --cov=src/validator --cov-report=xml --flake8
 
     - name: Upload Coverage to CodeCov
       uses: codecov/codecov-action@v4

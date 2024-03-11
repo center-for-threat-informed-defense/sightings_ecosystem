@@ -1,8 +1,11 @@
 name: Delete Preview Build
 
 on:
-  pull_request:
-    types: [closed]
+  # Temporarily disabling this job because it is broken beyond repair
+  push:
+    branches: [bogus]
+  # pull_request:
+  #   types: [closed]
 
 permissions:
   contents: read

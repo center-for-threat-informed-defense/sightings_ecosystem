@@ -26,10 +26,10 @@ ENV LC_ALL=C.UTF-8 LANG=C.UTF-8 \
 WORKDIR ${APP_DIR}
 
 # Install dependencies
-COPY requirements/pipeline-requirements.txt .
-RUN --mount=type=cache,target=/root/.cache \
-    python -m pip install -r pipeline-requirements.txt
-
+RUN curl -sSL https://install.python-poetry.org/ | python -
+ENV PATH PATH:$HOME/.poetry/bin
+COPY pyproject.toml poetry.lock ./
+RUN poetry install --with pipeline
 COPY src/pipeline/ .
 
 # create unprivileged service account

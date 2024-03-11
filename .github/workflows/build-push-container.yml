@@ -3,8 +3,11 @@
 name: Publish Docker image on publish of release
 
 on:
-  release:
-    types: [published]
+  # Temporarily disabling this job because it is broken beyond repair
+  push:
+    branches: [bogus]
+  # release:
+  #   types: [published]
 
 jobs:
   push_to_registries:

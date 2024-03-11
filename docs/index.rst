@@ -1,7 +1,9 @@
 Sightings Ecosystem |version|
 =============================
 
-This project is intended to give cyber defenders visibility into what adversaries are
+.. image:: _static/sightings.webp
+
+The Sightings Ecosystem gives cyber defenders visibility into what adversaries are
 actually doing in the wild. With your help, we are tracking MITRE ATT&CK® techniques
 observed to give defenders real data on technique prevalence. With this data, we can
 analyze trends in evolving adversary behaviors, and ultimately provide a data-driven

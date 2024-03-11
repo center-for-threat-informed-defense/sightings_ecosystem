@@ -29,9 +29,7 @@ $(BIN)/activate:
 
 .PHONY: install
 install: venv  upgrade-pip ## Install Python dependencies
-	./$(BIN)/python -m pip install -r requirements/pipeline-requirements.txt
-	./$(BIN)/python -m pip install -r requirements/analysis-requirements.txt
-	./$(BIN)/python -m pip install -r requirements/pipeline-requirements-ci.txt
+	poetry install --with analysis --with docs --with pipeline --with pipeline-ci
 
 .PHONY: upgrade-pip
 upgrade-pip: venv  ## Upgrade pip and related

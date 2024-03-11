@@ -1,3 +1,61 @@
+[tool.poetry]
+name = "sightings-ecosystem"
+version = "1.0.0"
+description = ""
+authors = ["Center for Threat-Informed Defense <ctid@mitre-engenuity.org>"]
+license = "Apache"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10, <3.11"
+
+[tool.poetry.group.analysis]
+optional = true
+
+[tool.poetry.group.analysis.dependencies]
+dash-cytoscape = "0.3.0"
+dash = "1.21.0"
+matplotlib = "3.4.2"
+networkx = "2.5"
+pandas = "1.1.3"
+plotly = "4.14.3"
+psycopg2-binary = "2.8.6"
+scipy = "1.7.3"
+wait-for-it = "2.2.1"
+werkzeug = "2.0.0"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^5.0.0"
+sphinx-autobuild = "^2021.3.14"
+sphinx-rtd-theme = "^1.0.0"
+
+[tool.poetry.group.pipeline]
+optional = true
+
+[tool.poetry.group.pipeline.dependencies]
+logging-formatter-anticrlf = "1.2"
+marshmallow = "3.5.1"
+psycopg2-binary = "2.8.6"
+sqlalchemy-batch-inserts = "0.0.4"
+sqlalchemy = "1.4.13"
+wait-for-it = "2.2.1"
+
+[tool.poetry.group.pipeline-ci]
+optional = true
+
+[tool.poetry.group.pipeline-ci.dependencies]
+bandit = "1.7.1"
+flake8 = "3.9.0"
+logging-formatter-anticrlf = "1.2"
+pyflakes = "2.3.1"
+pytest-cov = "2.11.1"
+pytest-flake8 = "1.0.7"
+pytest-pythonpath = "^0.7.4"
+safety = "1.10.3"
+
 [tool.black]
 exclude = '''
 /(
@@ -13,23 +71,6 @@ line-length = 120
 [tool.isort]
 profile = "black"
 multi_line_output = 3
-
-[tool.poetry]
-name = "sightings-ecosystem"
-version = "1.0.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
-license = "Apache"
-readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-
-
-[tool.poetry.group.dev.dependencies]
-sphinx = "^5.0.0"
-sphinx-autobuild = "^2021.3.14"
-sphinx-rtd-theme = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]
