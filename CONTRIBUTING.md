@@ -7,19 +7,28 @@ Thanks for contributing to the Sightings Ecosystem project!
 You are welcome to comment on issues, open new issues, and open pull requests.
 
 ### Data Contributors
-If you would like to get involved with the Sightings Ecosystem, let's continue this conversation and discuss what would be most appropriate for your organization. Please reach out to us at ctid@mitre-engenuity.org and we can walk through our needs, look at samples of your data, and discuss the intersection of the two and how we could best make use of it for Sightings.
+
+If you would like to get involved with the Sightings Ecosystem, let's continue this
+conversation and discuss what would be most appropriate for your organization. Please
+reach out to us at ctid@mitre-engenuity.org and we can walk through our needs, look at
+samples of your data, and discuss the intersection of the two and how we could best make
+use of it for Sightings.
 
 
 ### Code Contributors
 
-Pull requests should target the **[main](https://github.com/center-for-threat-informed-defense/sightings_ecosystem/tree/main)** branch of the repository.
+Pull requests should target the
+**[main](https://github.com/center-for-threat-informed-defense/sightings_ecosystem/tree/main)**
+branch of the repository.
 
-Also, if you contribute any source code, we need you to agree to the following Developer's Certificate of Origin below.
+Also, if you contribute any source code, we need you to agree to the following
+Developer's Certificate of Origin below.
 
 ## Reporting issues
-  
-* Describe (in detail) what should have happened. Include any supporting information that may be helpful in resolving the issue.
-  
+
+* Describe (in detail) what should have happened. Include any supporting information
+  that may be helpful in resolving the issue.
+
 * Be sure to include any steps to replicate the issue.
 
 ## Developer's Certificate of Origin v1.1
