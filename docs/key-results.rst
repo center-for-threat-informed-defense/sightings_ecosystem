@@ -10,7 +10,7 @@ Key Results
 Key Figures
 -----------
 
-* Time Range: **Aug 2021 – Nov 2023**
+* Time Range: **Aug 2021 – Sept 2023**
 * **1.6M+** Sightings
 * **353** Unique Techniques
 * **198** Countries
@@ -20,7 +20,7 @@ What's in the Data
 ------------------
 
 In Sightings 1.0, we had around 1.1M normalized sightings. Sightings 2.0 has around 1.6M
-sightings, and nearly twice as many unique techniques. This provides the Center with a
+sightings and nearly twice as many unique techniques. This provides the Center with a
 more comprehensive view of what techniques are being used in the wild. Out of 201 core
 Enterprise techniques, we saw 173 techniques, or 86% of the ATT&CK Framework, in our
 data.
@@ -71,7 +71,7 @@ cyber threat intelligence tends to report on, like the Professional, Scientific,
 Technical Services or Information sectors. While we collected sightings from multiple
 platforms, the vast majority came from Windows environments. Similarly, while we
 collected sightings from multiple privilege levels, most of the data reflects
-low-privilege behavior (e.g. not admin). For future reports, we hope to have more
+low-privilege behavior (i.e., user-level). For future reports, we hope to have more
 sightings from other platforms and privilege levels.
 
 Top 15 Techniques
@@ -84,7 +84,7 @@ Top 15 Techniques
 
    Percentage of the Top 15 Techniques.
 
-Of all techniques observed between 1 August 2021 to 30 November 2023, the top 15 most
+Of all techniques observed between 1 August 2021 to 30 September 2023, the top 15 most
 observed techniques comprise 82 percent of our sightings. This is lower than our last
 report, where the top 15 techniques comprised 90 percent of all observed techniques.
 This difference is likely due to the larger data set analyzed for this report, as well
