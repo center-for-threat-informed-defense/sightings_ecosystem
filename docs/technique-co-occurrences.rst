@@ -1,6 +1,6 @@
 Technique Co-Occurrences
 ========================
- For the purposes of this paper, a co-occurrence means that a sighting event contains more than one technique. Within our data, 18.96% of events contained co-occurrences. Interestingly, we discovered multiple events contained the same cluster of techniques.
+ For the purposes of this project, a co-occurrence means that a sighting event contains more than one technique. Within our data, around 19% of events contained co-occurrences. Interestingly, we discovered multiple events contained the same cluster of techniques.
 
 .. figure:: _static/TTP_co-occurrences-v7.png
    :alt: Top 15 Technique Co-occurrences.
@@ -43,7 +43,7 @@ It was grouped with T1027 and T1105 in over 140,000 events (represented by the b
 line), the most out of any co-occurrences, and seen nearly 40,000 times with T1105 and
 around 34,500 times with T1027. It is also included in the largest grouping we saw –
 T1059.001, T1021.006, T1027, T1047, T1055, T1074.001, and T1568.001, represented by the
-light green line. Similarly, the same cluster of techniques, without T1055, were seen
+light green line. Similarly, the same cluster of techniques, without T1055, was seen
 just as frequently, represented by the black line.
 
  .. figure:: _static/co-occurrence_software.png
@@ -59,17 +59,16 @@ information, providing insight into how adversaries are using these techniques. 
 Ukraine, Turkey, and Bangladesh. This aligns with the broader regional trend in our
 data, with a significant majority of events occurring in the US. Additionally, over 98%
 of co-occurrence events are Windows-based, which also aligns with the overall trend in
-our data. Adversaries used co-occurring techniques to largely target the Manufacturing,
-Administrative Support sectors. This is semi-similar to our broader data trend, where
+our data. Adversaries used co-occurring techniques mostly in the Manufacturing and Administrative and Support... sectors. This is semi-similar to our broader data trend, where
 Manufacturing constitutes around 24% of sighting events, the most of any sector, and
-Administrative Support comprises around 9% of sighting events, the 3rd most out of all
+Administrative and Support... comprises around 9% of sighting events, the 3rd most out of all
 sectors. Overall, our data shows around 91% of events using user-level privileges, with
 around 8% using SYSTEM level privileges. However, co-occurrences swap these amounts,
 with around 97% using SYSTEM level privileges and around 2% using user-level privileges.
 When comparing multiple attributes at once (e.g., co-occurrences by region and
 platform), these trends remain the same.
 
-When reviewing the software for co-occurrences Cobalt strike was seen most frequently,
+When reviewing the software for co-occurrences, Cobalt strike was seen most frequently,
 followed by AgentTesla. In our overall data trends, AgentTesla was seen the second most
 frequently; however, Cobalt Strike was not even in the top 50.
 
