@@ -12,8 +12,8 @@ Top 15 Techniques by Year
    Techniques by Year. (Click to enlarge)
 
 By reviewing the top 15 techniques across the entire timeline, we can use frequency
-analysis to identify any patterns or anomalies. Nota there are abrupt increases in our
-sightings at different times throughout the 28 months. We do not have enough information
+analysis to identify any patterns or anomalies. Note from the figure that there are abrupt increases in our
+sightings at different times throughout the 26 months. We do not have enough information
 to know definitively why these spikes occurred. It could be due to an increase of
 attacks in the wild, or a modified detection capability that suddenly started finding
 and reporting new techniques. Nearly 80% of our data is raw, meaning it has not been
@@ -25,7 +25,7 @@ We also noted changes in the top technique over time. T1059 dominated the top sp
 ranking in our top 15 techniques. `T1059 – Command and Scripting Interpreter
 <https://attack.mitre.org/techniques/T1059>`__ and `T1112 – Modify Registry
 <https://attack.mitre.org/techniques/T1112>`__ are extremely common techniques used by
-attackers. Unusually, these techniques are part of our data surges. For T1059, it was
+attackers. However, it is unusual that these techniques are part of our data surges. For T1059, it was
 consistently reported prior to these increases, so a configuration change would likely
 not be the cause for a sudden increase in sightings. Instead, this technique may have
 truly been seen more frequently in the wild during these times, or perhaps Sightings
@@ -120,9 +120,7 @@ Regions
 
    Sightings by Country. (Click to enlarge)
 
-We were provided with the corresponding ISO Alpha-2 country code for our sightings.
-Where necessary, the country code has been changed to the country’s name for clarity. It
-should also be noted that 66% of our data contains region information.
+We were provided with the corresponding ISO Alpha-2 country code for our sightings. The above image represents a world view of our data set. The color is darker where more Sightings were seen. Where necessary, the country code has been changed to the country’s name for clarity. It should also be noted that 66% of our data contains region information.
 
 Unsurprisingly, the United States dominated the count by an order of magnitude above the
 next closest country. We can likely attribute this to several causes:
@@ -244,7 +242,7 @@ most observed by platform, defenders can hone their defenses and verify their vi
 into each platform to detect the different software used by attackers.  Within our data,
 we can observe software usage by Windows and Nix platforms. For Nix, our sightings were
 primarily comprised of Mirai usage. For Windows, our sightings were spread more evenly
-across the top 10 software. However, our top 3 were Heodo, AgentTeslsa, and
+across the top 10 software. However, our top 3 were Heodo, AgentTesla, and
 RedLineStealer. As evidenced by the wordclouds, AgentTesla, Formbook, and SnakeKeylogger
 were the main 3 software that spanned Windows and Nix platforms.
 
@@ -300,7 +298,7 @@ MacOS platforms. T1027 and T1059 were seen on Windows and MacOS platforms, and T
 overlaps with MacOS and Other platforms. For the remaining techniques (that are not in
 the top 15 techniques), attackers focused on varying Tactics. For Nix, the techniques
 seen were Discovery focused. For MacOS, the techniques span the Execution, Persistence,
-Privilege Execution, and Defense Evasion Tactics. For Other platforms, the techniques
+Privilege Escalation, and Defense Evasion Tactics. For Other platforms, the techniques
 cover Defense Evasion, Persistence, Privilege Escalation, and Initial Access Tactics.
 Cyber defenders can use this breakdown to gain insight into the techniques,
 corresponding defenses, and NIST controls observed by specific platforms.
@@ -308,7 +306,7 @@ corresponding defenses, and NIST controls observed by specific platforms.
 Techniques by Privilege Level
 *****************************
 
-It should be noted that 99% of our data contains privilege level information.
+It should be noted that 35% of our data contains relevant privilege level information. 
 
 .. figure:: _static/priv_level_user_to_technique.png
    :alt: Top 5 Techniques by User Privilege Level.
@@ -324,9 +322,7 @@ It should be noted that 99% of our data contains privilege level information.
 
 Similar to platforms, the MITRE ATT&CK matrix includes information on what permissions
 are required for each technique. By using sightings data, we can observe the top
-techniques seen by privilege level. Around 35% of our data contains relevant privilege
-level information, most of which primarily consists of user and system permissions.
-Overall, most privilege level techniques are in the top 15 techniques,. The remaining
+techniques seen by privilege level. Overall, most privilege level techniques are in the top 15 techniques. The remaining
 techniques, T1218.011 and T1222.001, are used by adversaries for Defense Evasion. Cyber
 defenders can use this breakdown to gain insight into the techniques, corresponding
 defenses, and NIST controls observed by specific permissions.
