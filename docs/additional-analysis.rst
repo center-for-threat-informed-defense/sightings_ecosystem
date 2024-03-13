@@ -4,7 +4,7 @@ Additional Analysis
 Top 15 Techniques by Year
 **************************
 
-.. figure:: _static/Top_15_TID_over_time.png
+.. figure:: _static/Top_15_TID_over_time_new.png
    :alt: Top 15 Techniques over Time.
    :align: center
    :width: 100%
