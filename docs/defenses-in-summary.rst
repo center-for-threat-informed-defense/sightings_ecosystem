@@ -1,7 +1,7 @@
 Defenses in Summary
 ===================
 
-For our report, we included security controls from NIST 800-53 and detections from CAR
+For our report, we included prevention controls from NIST 800-53 and detections from CAR
 analytics and Sensor Mappings to ATT&CK. These preventions and detections are intended
 to be a starting point for defenders to protect against the top 15 most observed
 techniques. From NIST, Access Control, System and Information Integrity, and
@@ -58,12 +58,11 @@ a complete list of all mappings.
 
 To identify which prevention and detection methods are needed in their environment,
 defenders can use the Sightings data to assess their current security products and
-inform their security strategy. With ATT&CK Navigator, defenders can document what
+inform their security strategy. With `ATT&CK Navigator <https://mitre-attack.github.io/attack-navigator/>`_, defenders can document what
 techniques they can detect and how they prioritize those detections. Resources, such as
-the Center’s Adversary Emulation Library, MITRE’s CALDERA platform, or Red Canary’s
-Atomic Red Team library, can test an organization’s defenses and detections on a
+the Center’s `Adversary Emulation Library <https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/adversary-emulation-library/>`_, MITRE’s `CALDERA platform <https://caldera.mitre.org/>`_, or Red Canary’s
+`Atomic Red Team library <https://atomicredteam.io/atomics/>`_, can test an organization’s defenses and detections on a
 recurring basis. These libraries contain tests for the specific adversary behaviors
 observed in our Sightings dataset. These resources, and others, allow defenders to
 identify coverage gaps and test their tools against the top 15 techniques observed in
-the wild. This section is not intended to be a comprehensive list of tools for
-defenders, but it should provide a useful starting point.
+the wild. 
