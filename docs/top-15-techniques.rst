@@ -1,7 +1,7 @@
 Top 15 Techniques
 #################
 
-In this chapter, we dive deep into the top 15 most observed techniques. If a technique
+In this section, we dive deep into the top 15 most observed techniques. If a technique
 has sub-techniques in the ATT&CK framework, then we divided it into its sub-techniques;
 however, we only focused on the sub-techniques seen in our data. This provides more
 granular glimpse into each technique for defenders. The majority of the top 15
@@ -38,7 +38,7 @@ platforms have built-in command-line interfaces or scripting capabilities, allow
 adversaries to use them for executing arbitrary commands, scripts, or binaries.
 
 Overall, T1059 is the most sighted technique in our data, in part because we normalized
-our data – which included T1064 and T1086 from previous ATT&CK versions – to T1059. The
+our data, which included T1064 and T1086 from previous ATT&CK versions, to T1059. The
 overwhelming majority of the sightings come from `T1059.001 – PowerShell
 <https://attack.mitre.org/techniques/T1059/001>`__. This is not surprising as it is a
 common tool used by adversaries for its ubiquity, versatility, and ability to obfuscate
@@ -56,7 +56,7 @@ of T1059 sightings:
 While these techniques are not difficult to monitor for, they are regularly used by
 benign programs, which makes detection of malicious usage difficult.
 
-T1059 is evenly distributed between user and system privileges. It follows the overall
+T1059 is evenly distributed between user and SYSTEM privileges. It follows the overall
 data trends, with the US as the top region, Windows as the top platform, Manufacturing
 as the top sector, and Heodo (another name for Emotet) as the top software.
 
@@ -183,7 +183,7 @@ Execution <https://attack.mitre.org/techniques/T1204>`__, `T1059 – Command and
 Interpreter <https://attack.mitre.org/techniques/T1059>`__, and others depending on how
 obfuscation was used during the attack.
 
-A majority of T1027 did not include sub-techniques. This is likely due in part to
+A majority of T1027 sightings did not include sub-techniques. This is likely due in part to
 normalizing our data, which included T1045 and T1066 from previous ATT&CK versions, to
 T1027. The most observed sub-technique was `T1027.002 – Software Packing
 <https://attack.mitre.org/techniques/T1027/002>`__. Adversaries use this sub-technique
@@ -243,7 +243,7 @@ Description
 
 Adversaries may transfer tools or other files from a command-and-control system into a
 compromised environment. They can conduct living-of-the-land attacks using native
-utilities or installers and package managers in Windows, Linux, and macOS systems to
+utilities or installers and package managers in Windows, Linux, and MacOS systems to
 download files. Adversaries can also download files through Cloud-based services, such
 as Dropbox or OneDrive, that sync with the targeted systems.
 
@@ -379,7 +379,7 @@ evidence of their presence or hinder defenses. Because these artifacts are used 
 forensic and incident response efforts, their removal could impede an investigation or
 lengthen the intrusion detection process.
 
-A majority of T1070 did not include sub-techniques. This is likely due in part to
+A majority of T1070 sightings did not include sub-techniques. This is likely due in part to
 normalizing our data, which included T1099 and T1107 from previous ATT&CK versions, to
 T1070. The following sub-techniques comprise less than 1% of T1070 sightings:
 
@@ -479,7 +479,7 @@ engineering attacks. Adversaries may send a malicious link, file, or image for a
 open or deceive users into enabling Remote Access Software to give them direct control
 of the system.
 
-A majority of sightings did not contain a sub-technique. Less than 1% contained
+A majority of T1204 sightings did not contain a sub-technique. Less than 1% contained
 `T1204.001 – Malicious Link <https://attack.mitre.org/techniques/T1204/001>`__ and
 `T1204.001 – Malicious Link <https://attack.mitre.org/techniques/T1204/001>`__. Most
 sightings occurred on Windows-based systems and were almost evenly distributed across
@@ -489,7 +489,7 @@ software, with user level privileges and Cobalt Strike seen the most frequently.
 Prevention
 ----------
 
-The Center's NIST 800-53 mappings list 13 security controls to mitigate Indicator Removal:
+The Center's NIST 800-53 mappings list 13 security controls to mitigate User Execution:
 
 * **AC-4 Information Flow Enforcement** (Also mitigates Malicious Link and Malicious File)
 * **CA-7 Continuous Monitoring** (Also mitigates Malicious Link and Malicious File)
@@ -567,20 +567,17 @@ respectively.
 Prevention
 ----------
 
-The Center's NIST 800-53 mappings list 1 security controls to mitigate `T1564.002 –
-Hidden Users <https://attack.mitre.org/techniques/T1564/002>`__:
+The Center's NIST 800-53 mappings list 1 security controls to mitigate Hidden Users: 
 
 * **CM-6 Configuration Settings**
 
-The Center's NIST 800-53 mappings list 3 security controls to mitigate `T1564.003 –
-Hidden Window <https://attack.mitre.org/techniques/T1564/003>`__:
+The Center's NIST 800-53 mappings list 3 security controls to mitigate Hidden Window: 
 
 * **CM-7 Least Functionality** (Also mitigates Email Hiding Rules and Hidden Users)
 * **SI-7 Software, Firmware, and Information Integrity** (Also mitigates NTFS File Attributes and Email Hiding Rules)
 * **SI-10 Information Input Validation**
 
-The Center's NIST 800-53 mappings list 5 security controls to mitigate `T1564.004 – NTFS
-File Attributes <https://attack.mitre.org/techniques/T1564/004>`__:
+The Center's NIST 800-53 mappings list 5 security controls to mitigate NTFS File Attributes:
 
 * **AC-3 Access Enforcement**
 * **AC-16 Security and Privacy Attributes**
@@ -588,8 +585,7 @@ File Attributes <https://attack.mitre.org/techniques/T1564/004>`__:
 * **SI-3 Malicious Code Protection** (Also mitigates Email Hiding Rules)
 * **SI-4 System Monitoring** (Also mitigates Email Hiding Rules and Hidden Users)
 
-The Center's NIST 800-53 mappings list 4 security controls to mitigate `T1564.008 –
-Email Hiding Rules <https://attack.mitre.org/techniques/T1564/008>`__:
+The Center's NIST 800-53 mappings list 4 security controls to mitigate Email Hiding Rules:
 
 * **AC-4 Information Flow Enforcement**
 * **CM-3 Configuration Change Control**
@@ -723,7 +719,7 @@ Description
 Adversaries can use dumped credentials to obtain account login and credential material
 to access restricted information or perform Lateral Movement.
 
-A majority of sightings did not contain sub-techniques. The following sub-techniques
+A majority of T1003 sightings did not contain sub-techniques. The following sub-techniques
 comprise less than 3% of T1003 sightings:
 
 * `T1003.001 – LSASS Memory <https://attack.mitre.org/techniques/T1003/001>`__
@@ -737,7 +733,7 @@ comprise less than 3% of T1003 sightings:
 
 Most T1003 sightings were received during 2022 and dropped off in 2023. This could be
 due to random statistical noise in the data, or attackers using this technique less in
-the wild. Most sightings occurred on Windows-based systems and user level privileges.
+the wild. Most sightings occurred on Windows-based systems and used user level privileges.
 Only a small sub-set contained location and sector information, with most sightings
 occurring in the US. Notably, T1003 deviated from overall trends on the data, with
 AgentTesla as the most frequently seen software and Information as the most frequently
@@ -856,7 +852,7 @@ Description
 Adversaries may use Remote Services, coupled with Valid Accounts (T1078), to exploit
 services that accept remote connections, such as RDP, telnet, SSH, or VNC. Some
 platforms also have native remote management utilities, such as the Apple Remote Desktop
-on macOS, that adversaries can also use for remote code execution. If the servers and
+on MacOS, that adversaries can also use for remote code execution. If the servers and
 workstations are joined to a domain, adversaries could use a single set of login
 credentials to move laterally and access additional systems.
 
@@ -872,7 +868,7 @@ comprise less than 3% of T1021 Sightings:
 * `T1021.004 – SSH <https://attack.mitre.org/techniques/T1021/004>`__
 
 Most T1021 sightings occurred on Windows-based systems and used user level permissions;
-however, we had a couple thousand nix sightings, which is unusual but unsurprising since
+however, we had a couple thousand Nix sightings, which is unusual but unsurprising since
 many intrusions use remote services. Only a small sub-set of sightings contained
 location and sector information, with most occurring in the US and in the Professional,
 Scientific, and Technical Services sector. Notably, T1021 deviated from overall trends
@@ -1015,7 +1011,7 @@ SMB/Windows Admin Shares <https://attack.mitre.org/techniques/T1021/002>`__. The
 attacks may be used by adversaries for monetary gain or data destruction.
 
 Most T1486 events occurred in 2022, on Windows-based platforms, with user level
-permissions. Notably, T1003 deviated from overall trends on the data, with AgentTesla as
+permissions. Notably, T1486 deviated from overall trends on the data, with AgentTesla as
 the most frequently seen software. We lacked a meaningful amount of data for location or
 sector analysis.
 
@@ -1079,7 +1075,7 @@ deviated from software trends, with njrat as the most frequently seen software.
 Prevention
 ----------
 
-The Center's NIST 800-53 mappings list 10 security controls to mitigate Distributed Component Object Model:
+The Center's NIST 800-53 mappings list 10 security controls to mitigate Replication Through Removable Media:
 
 * **AC-3 Access Enforcement**
 * **AC-6 Least Privilege**
@@ -1120,7 +1116,7 @@ Description
 
 An adversary may use information about the operating system and hardware to shape code
 development and follow-on behaviors. These attacks can use native tools, such as
-systeminfo on Windows, the systemsetup configuration tool on macOS, or the command-line
+systeminfo on Windows, the systemsetup configuration tool on MacOS, or the command-line
 interface of a network device, to gather detailed system information. Adversaries can
 use this information, coupled with other forms of Discovery or Reconnaissance, to avoid
 detections and conduct more targeted attacks.
@@ -1257,7 +1253,7 @@ The most observed sub-technique was `T1562.001 – Disable or Modify Tools
 <https://attack.mitre.org/techniques/T1562/001>`__. Adversaries may use this
 sub-technique to stop defensive services, edit or delete Registry keys, or modify
 configuration files. The second most-observed sub-technique was `T1562.004 – Disable or
-Modify System Firewall <https://attack.mitre.org/techniques/T1562/004>`__. The
+Modify System Firewall <https://attack.mitre.org/techniques/T1562/004>`__. This
 sub-technique allows adversaries to perform C2 communications, data exfiltration, or
 lateral movement. Less than 6% of sightings were Disable Windows Event Logging
 `(T1562.002) <https://attack.mitre.org/techniques/T1562/002/>`_, which reduces the
