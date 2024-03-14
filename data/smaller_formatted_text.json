@@ -1,0 +1,23 @@
+{
+        "_version": 2.0,
+	"id": "8b24766b-0a77-5b16-811b-30feace8ed05",
+	"start_time": "2023-08-14T23:56:32.305Z",
+        "tid": [
+            "T1046",
+            "T1087.002"
+          ],
+          "detection_type": "human_validated",
+          "detection_source": "network_based",
+          "sector": "Unknown",
+        },
+      {
+        "_version": 2.0,
+        "id": "e765790e-7193-5926-92b6-8a05b7a95261",
+	"start_time": "2023-08-12T12:30:23.000Z",
+        "tid": [
+            "T1087.002"
+	]
+         "detection_type": "human_validated",
+         "detection_source": "network_based",
+         "sector": "Unknown",
+       },
