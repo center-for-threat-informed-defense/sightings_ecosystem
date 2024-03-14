@@ -29,7 +29,11 @@ organization based on location, industry sector, and deployed platforms.
 Framing our Analysis
 --------------------
 
-While our volume of data has increased significantly, there are caveats to keep in mind when reading our results. Primarily, we are limited to the data we were provided. While getting the data straight from vendors is beneficial, it introduces biases. To ameliorate this bias, we have a diverse set of providers and a large data set, which reduces some skewing within the data. 
+While our volume of data has increased significantly, there are caveats to keep
+in mind when reading our results. Primarily, we are limited to the data we were
+provided. While getting the data straight from vendors is beneficial, it
+introduces biases. To ameliorate this bias, we have a diverse set of providers
+and a large data set, which reduces some skewing within the data. 
 
 Additionally, the quality of the data is limited to what the vendors generate. We
 provide a data model for submitting data, but it is up to the vendors which fields to
