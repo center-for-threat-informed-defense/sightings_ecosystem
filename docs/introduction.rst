@@ -53,7 +53,7 @@ community’s ability to detect certain techniques, rather than those techniques
 used more frequently. Despite these limitations, our data still gives us a unique
 insight into common techniques occurring in the wild.
 
-Due to our time range (28 months) and variances in the ATT&CK version used by
+Due to our time range (26 months) and variances in the ATT&CK version used by
 contributors, the Sightings we receive are sometimes notated in older versions of
 ATT&CK. As the ATT&CK knowledgebase evolves, techniques are added, removed, or merged.
 This causes issues when interpreting our data. For example, Timestomp was in our top 15
