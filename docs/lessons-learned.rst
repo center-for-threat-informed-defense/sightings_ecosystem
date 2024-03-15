@@ -3,7 +3,7 @@ Lessons Learned
 
 We discovered multiple issues during analysis. One of the most significant issues was
 the different ATT&CK versions present in our data. While ATT&CK updates occur twice per
-year, often they are minor updates. However, our data spans 28 months and includes data
+year, often they are minor updates. However, our data spans 26 months and includes data
 from older ATT&CK versions, such as ATT&CK version 7 which introduced many new
 techniques and depreciated/revoked several others. While this was released in 2020, we
 still found data using old Technique IDs pre-version 7. As a short-term solution, we

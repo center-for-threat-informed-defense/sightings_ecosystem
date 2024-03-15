@@ -6,9 +6,9 @@ Sightings Ecosystem |version|
 The Sightings Ecosystem gives cyber defenders visibility into what adversaries are
 actually doing in the wild. With your help, we are tracking MITRE ATT&CK® techniques
 observed to give defenders real data on technique prevalence. With this data, we can
-analyze trends in evolving adversary behaviors, and ultimately provide a data-driven
+analyze trends in evolving adversary behaviors and provide a data-driven
 resource to support prioritizing defensive operations. This project ingests ATT&CK
-technique sightings and process them to produce useful datasets and reporting.
+technique sightings and processes them to produce useful datasets and reporting.
 
 This project is created and maintained by the `MITRE Engenuity Center for
 Threat-Informed Defense <https://ctid.mitre-engenuity.org/>`__ in futherance of our
