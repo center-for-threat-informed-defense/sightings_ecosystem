@@ -18,8 +18,9 @@
 # -- Project information -----------------------------------------------------
 
 project = "Sightings Ecosystem"
-copyright = "2024, Center for Threat-Informed Defense"
 author = "Center for Threat-Informed Defense"
+copyright_years = "2024"
+prs_numbers = "CT0103"
 
 # The full version, including alpha/beta/rc tags
 version = "v2.0.0"
@@ -43,6 +44,10 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
+rst_prolog = f"""
+.. |copyright_years| replace:: {copyright_years}
+.. |prs_numbers| replace:: {prs_numbers}
+"""
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -62,9 +67,12 @@ html_copy_source = False
 html_show_sourcelink = False
 html_show_sphinx = False
 html_use_smartypants = False
-
+html_context = {
+    "copyright_years": copyright_years,
+    "prs_numbers": prs_numbers,
+}
 html_theme_options = {
-    "analytics_id": "", # TODO Create and fill in Google Analytics G-tag.
+    "analytics_id": "G-KWJLCFZG0V",
     "display_version": True,
     "logo_only": True,
     "style_external_links": True,

@@ -77,7 +77,7 @@ before making a pull request.
 
 ## Notice
 
-Copyright 2021, 2024 MITRE Engenuity. Approved for public release. Document number
+Copyright 2021, 2024 MITRE Engenuity. Approved for public release. Document number(s)
 CT0022, CT0103.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
