@@ -23,12 +23,14 @@ The Sightings Ecosystem is entirely built upon the generous contributions of a s
     :target: https://www.mnemonic.no/
     :width: 40%
 | 
+
 .. figure:: _static/picus_logo.svg
     :alt: Picus Security
     :align: center
     :target: https://www.picussecurity.com/
     :width: 25%
 | 
+
 .. figure:: _static/pipeline_logo.svg
     :alt: Pipeline
     :align: center
