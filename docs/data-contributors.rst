@@ -15,8 +15,6 @@ The Sightings Ecosystem is entirely built upon the generous contributions of a s
    :width: 45%
 ..
 
-| 
-
 .. figure:: _static/mnemonic_logo.png
     :alt: Mnemonic
     :align: center
@@ -24,26 +22,18 @@ The Sightings Ecosystem is entirely built upon the generous contributions of a s
     :width: 40%
 ..
 
-| 
-
 .. figure:: _static/picus_logo.svg
     :alt: Picus Security
     :align: center
     :target: https://www.picussecurity.com/
     :width: 25%
 ..
-
-| 
-
 .. figure:: _static/pipeline_logo.svg
     :alt: Pipeline
     :align: center
     :target: https://www.ppln.co/
     :width: 35%
 ..
-    
-| 
-
 .. figure:: _static/Red-Canary-Logo.jpg
     :alt: Red Canary
     :align: center
