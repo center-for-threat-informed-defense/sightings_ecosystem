@@ -12,15 +12,11 @@ ATT&CK techniques apply to the average organization?” and “Which techniques 
 organization realistically need to defend against?”
 
 MITRE’s Center for Threat-Informed Defense (the Center) began addressing these questions
-with the Sightings Ecosystem. The project focused on creating an anonymous,
+with the Sightings Ecosystem. This project focuses on creating an anonymous,
 community-sourced repository of technique detections to identify when and where ATT&CK
-techniques occurred in the wild. The Center, in collaboration with AttackIQ Inc., Cyber
-Threat Alliance, Fortinet’s FortiGuard Labs, HCA Healthcare, JP Morgan Chase, and
-Verizon Business Solutions, released a report in 2021 highlighting their key findings.
-Now, in collaboration with the same partners, the Center is updating the 2021 report to
-include current technique sightings and additional analysis. Since the last iteration of
-the Sightings Ecosystem, the Center has expanded the project’s repository and updated
-its data model to include additional fields. This information details common adversary
+techniques occurred in the wild. The Center, in collaboration with `AttackIQ <https://www.attackiq.com/>`__, `Cyber
+Threat Alliance <https://www.cyberthreatalliance.org/>`__, `Fortinet’s FortiGuard Labs <https://www.fortinet.com/fortiguard/labs>`__, `HCA Healthcare <https://hcahealthcare.com/>`__, `JP Morgan Chase <https://www.jpmorganchase.com/>`__, and
+`Verizon Business <http://www.verizon.com/business>`__, analyzed over 1 million security events that have been mapped to MITRE ATT&CK. These events detail common adversary
 behaviors and techniques, targeted industries, and observed software and accompanying
 privilege levels. With this data, defenders can develop a threat-informed defense
 strategy focused on the top techniques observed in the wild and the threats to their
