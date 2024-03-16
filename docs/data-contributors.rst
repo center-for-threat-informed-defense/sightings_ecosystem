@@ -13,7 +13,7 @@ The Sightings Ecosystem is entirely built upon the generous contributions of a s
    :align: center
    :target: https://www.fortinet.com/
    :width: 45%
-
+..
 
 | 
 
@@ -22,6 +22,8 @@ The Sightings Ecosystem is entirely built upon the generous contributions of a s
     :align: center
     :target: https://www.mnemonic.no/
     :width: 40%
+..
+
 | 
 
 .. figure:: _static/picus_logo.svg
@@ -29,6 +31,7 @@ The Sightings Ecosystem is entirely built upon the generous contributions of a s
     :align: center
     :target: https://www.picussecurity.com/
     :width: 25%
+..
 | 
 
 .. figure:: _static/pipeline_logo.svg
@@ -36,6 +39,7 @@ The Sightings Ecosystem is entirely built upon the generous contributions of a s
     :align: center
     :target: https://www.ppln.co/
     :width: 35%
+..
 | 
 
 .. figure:: _static/Red-Canary-Logo.jpg
@@ -43,7 +47,8 @@ The Sightings Ecosystem is entirely built upon the generous contributions of a s
     :align: center
     :target: https://redcanary.com/
     :width: 40%
-
+..
+    
 
 
 
