@@ -31,6 +31,7 @@ details.
     defenses-in-summary
     lessons-learned
     data-model
+    data-contributors
     get-involved
 
 Notice
