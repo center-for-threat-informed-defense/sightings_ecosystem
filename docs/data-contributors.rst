@@ -8,7 +8,7 @@ The Sightings Ecosystem is entirely built upon the generous contributions of a s
    :target: https://www.catonetworks.com/
    :width: 25%
 
-.. figure:: _static/fortinet_logo.png
+.. figure:: _static/Fortinet_Logo.png
    :alt: Fortinet
    :align: center
    :target: https://www.fortinet.com/
