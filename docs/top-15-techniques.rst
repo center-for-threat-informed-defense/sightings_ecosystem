@@ -8,11 +8,9 @@ granular glimpse into each technique for defenders. The majority of the top 15
 techniques abuse legitimate system tools. This underscores the idea that adversaries are
 attempting to appear as legitimate users.
 
-.. TODO update these mappings links when Mappings Explorer comes out
-
 We have incorporated relevant security controls from the Center’s `NIST SP 800-53 to
 ATT&CK mappings
-<https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/our-work/nist-800-53-control-mappings/>`__
+<https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/>`__
 and detection methods from the `Cyber Analytics Repository
 <https://car.mitre.org/analytics/>`_ and the Center’s `Sensor Mappings to ATT&CK
 <https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/our-work/sensor-mappings-to-attack/>`_,
@@ -63,10 +61,9 @@ as the top sector, and Heodo (another name for Emotet) as the top software.
 Prevention
 ----------
 
-.. TODO I think when mappings explorer is ready, we should discuss the removal all of
-.. these Prevention sections and replace with links to MapEx
-
-The Center's NIST 800-53 mappings list 24 security controls to mitigate Command and Script Interpreter:
+The Center's `NIST 800-53 mappings
+<https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/>`_
+list 24 security controls to mitigate Command and Script Interpreter:
 
 * **AC-2 Account Management** (Also mitigates PowerShell, AppleScript, Visual Basic,
   Windows Command Shell, Unix Shell, Python, JavaScript)
@@ -163,7 +160,7 @@ Sensor Mappings to ATT&CK
   * - **Winevtx**
     - 4103, 4104, 4688, 4696
 
-2. `T1027 – Obfuscated Files or Information <https://attack.mitre.org/techniques/T1027>`__
+1. `T1027 – Obfuscated Files or Information <https://attack.mitre.org/techniques/T1027>`__
 ******************************************************************************************
 
 Description
@@ -567,11 +564,11 @@ respectively.
 Prevention
 ----------
 
-The Center's NIST 800-53 mappings list 1 security controls to mitigate Hidden Users: 
+The Center's NIST 800-53 mappings list 1 security controls to mitigate Hidden Users:
 
 * **CM-6 Configuration Settings**
 
-The Center's NIST 800-53 mappings list 3 security controls to mitigate Hidden Window: 
+The Center's NIST 800-53 mappings list 3 security controls to mitigate Hidden Window:
 
 * **CM-7 Least Functionality** (Also mitigates Email Hiding Rules and Hidden Users)
 * **SI-7 Software, Firmware, and Information Integrity** (Also mitigates NTFS File Attributes and Email Hiding Rules)
