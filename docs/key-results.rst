@@ -119,25 +119,32 @@ the range and scope of our most observed data.
 Top 10 NIST 800-53 Controls
 ---------------------------
 
-.. TODO link this to the new mappings explorer website when its ready. we can link each
-.. control below directly to a page.
-
 Using the Center’s mappings of the National Institute of Standards and Technology (NIST)
 Special Publication (SP) 800-53 revision 5 to ATT&CK, we can identify which NIST
 controls are the most effective in protecting against our top 15 techniques. Overall,
 Access Control, System and Information Integrity, and Configuration Management controls
 are the most frequently seen.
 
-1. SI-3 Malicious Code Protection
-2. SI-4 System Monitoring
-3. CM-6 Configuration Settings
-4. CM-2 Baseline Configuration
-5. AC-3 Access Enforcement
-6. AC-6 Least Privilege
-7. CM-7 Least Functionality
-8. SI-7 Software, Firmware, and Information Integrity
-9. CA-7 Continuous Monitoring
-10. AC-2 Account Management
+1. `SI-03 Malicious Code Protection
+   <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/SI-03/>`_
+2. `SI-04 System Monitoring
+   <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/SI-04/>`_
+3. `CM-06 Configuration Settings
+   <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/CM-06/>`_
+4. `CM-02 Baseline Configuration
+   <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/CM-02/>`_
+5. `AC-03 Access Enforcement
+   <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/AC-03/>`_
+6. `AC-06 Least Privilege
+   <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/AC-06/>`_
+7. `CM-07 Least Functionality
+   <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/CM-07/>`_
+8. `SI-07 Software, Firmware, and Information Integrity
+   <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/SI-07/>`_
+9. `CA-07 Continuous Monitoring
+   <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/CA-07/>`_
+10. `AC-02 Account Management
+    <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/attack-14.1/domain-enterprise/nist-rev5/AC-02/>`_
 
 .. figure:: _static/nist_controls.png
    :alt: Top 10 NIST Controls and their coverage of the Top 15 Techniques.
