@@ -160,7 +160,7 @@ Sensor Mappings to ATT&CK
   * - **Winevtx**
     - 4103, 4104, 4688, 4696
 
-1. `T1027 – Obfuscated Files or Information <https://attack.mitre.org/techniques/T1027>`__
+2. `T1027 – Obfuscated Files or Information <https://attack.mitre.org/techniques/T1027>`__
 ******************************************************************************************
 
 Description
