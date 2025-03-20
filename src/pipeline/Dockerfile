@@ -8,7 +8,7 @@ FROM python:3.9-slim
 # OCI labels
 LABEL "org.opencontainers.image.title"="Sightings Pipeline"
 LABEL "org.opencontainers.image.description"="Pipeline component of Sightings project"
-LABEL "org.opencontainers.image.url"="https://ctid.mitre-engenuity.org/"
+LABEL "org.opencontainers.image.url"="https://ctid.mitre.org/"
 
 ENV APP_DIR /pipeline
 ENV IN_CONTAINER 1

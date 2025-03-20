@@ -13,7 +13,7 @@ ATT&CK mappings
 <https://center-for-threat-informed-defense.github.io/mappings-explorer/external/nist/>`__
 and detection methods from the `Cyber Analytics Repository
 <https://car.mitre.org/analytics/>`_ and the Center’s `Sensor Mappings to ATT&CK
-<https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/our-work/sensor-mappings-to-attack/>`_,
+<https://ctid.mitre.org/projects/sensor-mappings-to-attack>`_,
 which connects conceptual data sources to sensors and other tools. Due to the number of
 Windows events in our data, we chose to focus on sensor mappings for Sysmon and Windows
 event logs (WinEvtx). We provide prevention and detection controls focused on creating

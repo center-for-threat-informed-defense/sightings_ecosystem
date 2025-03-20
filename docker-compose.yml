@@ -45,7 +45,7 @@ services:
     depends_on:
       - postgres
     environment:
-      PGADMIN_DEFAULT_EMAIL: sightings@mitre-engenuity.org
+      PGADMIN_DEFAULT_EMAIL: sightings@mitre.org
       PGADMIN_DEFAULT_PASSWORD: sightings
     volumes:
       - pgadmin-data:/var/lib/pgadmin
