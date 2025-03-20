@@ -29,9 +29,10 @@ werkzeug = "2.0.0"
 optional = true
 
 [tool.poetry.group.docs.dependencies]
-sphinx = "^5.0.0"
+sphinx = "^6.2"
 sphinx-autobuild = "^2021.3.14"
-sphinx-rtd-theme = "^1.0.0"
+sphinx-wagtail-theme = "^6.5.0"
+python-slugify = "^8.0.4"
 
 [tool.poetry.group.pipeline]
 optional = true
