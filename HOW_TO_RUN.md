@@ -187,7 +187,7 @@ Also see the [guidance for contributors](./CONTRIBUTING.md) if are you intereste
 
 ## Notice
 
-Copyright 2021 MITRE. Approved for public release. Document number XXXXX
+Copyright 2021, 2024 MITRE. Approved for public release. Document number(s) CT0022, CT0103.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
