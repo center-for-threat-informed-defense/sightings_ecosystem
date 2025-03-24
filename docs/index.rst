@@ -14,7 +14,7 @@ This project is created and maintained by the `MITRE Center for
 Threat-Informed Defense <https://ctid.mitre.org/>`__ in futherance of our
 mission to advance the state of the art and the state of the practice in threat-informed
 defense globally. The project is funded by our `research participants
-<https://ctid.mitre.org/projects/sightings-ecosystem#RESEARCH-PARTICIPANTS>`__.
+<https://ctid.mitre.org/projects/sightings-ecosystem#participants-section>`__.
 You can be a part of the success of this project by contributing your Sightings data and
 help advance the state of cybersecurity at large. Email ctid@mitre.org for
 details.

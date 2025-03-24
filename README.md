@@ -10,7 +10,7 @@ technique sightings and process them to produce useful datasets and reporting.
 You can be a part of the success of this project by contributing your Sightings data and
 help advance the state of cybersecurity at large. To join us, please submit a [Data
 Contributor
-Request](https://ctid.mitre.org/projects/sightings-ecosystem#CFP)
+Request](https://ctid.mitre.org/projects/sightings-ecosystem)
 form.
 
 - [Getting Started](#getting-started)
@@ -30,7 +30,7 @@ Flows and JSON Schema for the language.
 | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
 | [Project Web Site](https://center-for-threat-informed-defense.github.io/sightings_ecosystem/)                                              | Complete documentation for the Sightings Ecosystem.                                      |
 | [Sightings Data](https://ctidpublic.blob.core.windows.net/sightings/sightings_v2_public.csv)                                               | Download the underlying Sightings data. (CSV – 25.7MiB)                                  |
-| [Data Contributor Request](https://ctid.mitre.org/projects/sightings-ecosystem#CFP) | Become a data contributor.                                                               |
+| [Data Contributor Request](https://ctid.mitre.org/projects/sightings-ecosystem) | Become a data contributor.                                                               |
 | [Upload Tool](https://github.com/center-for-threat-informed-defense/sightings_ecosystem/tree/main/uploaders)                               | A tool for automatically submitting sightings data (supports Linux, MacOS, and Windows). |
 
 ## Background
@@ -58,7 +58,7 @@ adversaries use specific behaviors against real production systems and networks.
   conduct your own analysis. If you generate any new insights, we would love to hear
   about it.
 - **Become a data contributor.** Submit a [Data Contributor
-  Request](https://ctid.mitre.org/projects/sightings-ecosystem#CFP)
+  Request](https://ctid.mitre.org/projects/sightings-ecosystem)
   form and help us make Sightings even better!
 
 ## Questions and Feedback

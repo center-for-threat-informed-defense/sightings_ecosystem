@@ -36,7 +36,7 @@ jobs:
     - name: Build HTML docs
       run: poetry run make docs-ci
     - name: Upload HTML docs
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: sightings-ecosystem-docs-html
         path: docs/_build/dirhtml/
