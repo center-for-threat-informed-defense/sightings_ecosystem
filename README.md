@@ -7,17 +7,12 @@ analyze trends in evolving adversary behaviors, and ultimately provide a data-dr
 resource to support prioritizing defensive operations. This project ingests ATT&CK
 technique sightings and process them to produce useful datasets and reporting.
 
-You can be a part of the success of this project by contributing your Sightings data and
-help advance the state of cybersecurity at large. To join us, please submit a [Data
-Contributor
-Request](https://ctid.mitre.org/projects/sightings-ecosystem)
-form.
-
-- [Getting Started](#getting-started)
-- [Background](#background)
-- [Getting Involved](#getting-involved)
-- [Questions and Feedback](#questions-and-feedback)
-- [Notice](#notice)
+- [Sightings Ecosystem](#sightings-ecosystem)
+  - [Getting Started](#getting-started)
+  - [Background](#background)
+  - [Getting Involved](#getting-involved)
+  - [Questions and Feedback](#questions-and-feedback)
+  - [Notice](#notice)
 
 ## Getting Started
 
@@ -26,12 +21,11 @@ Next, you may want to try creating your own attack flows using the Attack Flow B
 which is an easy-to-use GUI tool. When you are ready to dive deep, review the Example
 Flows and JSON Schema for the language.
 
-| Resource                                                                                                                                   | Description                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| [Project Web Site](https://center-for-threat-informed-defense.github.io/sightings_ecosystem/)                                              | Complete documentation for the Sightings Ecosystem.                                      |
-| [Sightings Data](https://ctidpublic.blob.core.windows.net/sightings/sightings_v2_public.csv)                                               | Download the underlying Sightings data. (CSV – 25.7MiB)                                  |
-| [Data Contributor Request](https://ctid.mitre.org/projects/sightings-ecosystem) | Become a data contributor.                                                               |
-| [Upload Tool](https://github.com/center-for-threat-informed-defense/sightings_ecosystem/tree/main/uploaders)                               | A tool for automatically submitting sightings data (supports Linux, MacOS, and Windows). |
+| Resource                                                                                                     | Description                                                                              |
+| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| [Project Web Site](https://center-for-threat-informed-defense.github.io/sightings_ecosystem/)                | Complete documentation for the Sightings Ecosystem.                                      |
+| [Sightings Data](https://ctidpublic.blob.core.windows.net/sightings/sightings_v2_public.csv)                 | Download the underlying Sightings data. (CSV – 25.7MiB)                                  |
+| [Upload Tool](https://github.com/center-for-threat-informed-defense/sightings_ecosystem/tree/main/uploaders) | A tool for automatically submitting sightings data (supports Linux, MacOS, and Windows). |
 
 ## Background
 
@@ -57,9 +51,6 @@ adversaries use specific behaviors against real production systems and networks.
 - **Analyze the underlying data.** We make the dataset freely available so that you can
   conduct your own analysis. If you generate any new insights, we would love to hear
   about it.
-- **Become a data contributor.** Submit a [Data Contributor
-  Request](https://ctid.mitre.org/projects/sightings-ecosystem)
-  form and help us make Sightings even better!
 
 ## Questions and Feedback
 
