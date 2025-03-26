@@ -10,7 +10,7 @@ You are welcome to comment on issues, open new issues, and open pull requests.
 
 If you would like to get involved with the Sightings Ecosystem, let's continue this
 conversation and discuss what would be most appropriate for your organization. Please
-reach out to us at ctid@mitre-engenuity.org and we can walk through our needs, look at
+reach out to us at [ctid@mitre.org](mailto:ctid@mitre.org?subject=Question%20about%20Sightings%20Ecosystem) and we can walk through our needs, look at
 samples of your data, and discuss the intersection of the two and how we could best make
 use of it for Sightings.
 

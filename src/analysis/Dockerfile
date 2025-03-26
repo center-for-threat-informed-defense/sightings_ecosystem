@@ -7,7 +7,7 @@ FROM python:3.9-slim
 # OCI labels
 LABEL "org.opencontainers.image.title"="Sightings Analysis"
 LABEL "org.opencontainers.image.description"="Analysis component of Sightings project"
-LABEL "org.opencontainers.image.url"="https://ctid.mitre-engenuity.org/"
+LABEL "org.opencontainers.image.url"="https://ctid.mitre.org/"
 
 ENV APP_DIR /analysis
 ENV PYTHONUNBUFFERED 1

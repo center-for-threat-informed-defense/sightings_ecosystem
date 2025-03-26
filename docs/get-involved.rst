@@ -1,7 +1,7 @@
 Get Involved
 ============
 
-If your organization has ATT&CK-mapped detection data and you want to discuss the possibility of becoming a data contributor, please email us at `ctid@mitre-engenuity.org <mailto:ctid@mitre-engenuity.org>`__
+If your organization has ATT&CK-mapped detection data and you want to discuss the possibility of becoming a data contributor, please email us at `ctid@mitre.org <mailto:ctid@mitre.org>`__
 
 We are always looking for more contributors for the Sightings Ecosystem project,
 and it is a tricky balance between encouraging maximum contribution and creating a data model that is more restrictive. This is why our data model has fields that are optional, even if the enhanced data would provide added benefits and additional analysis. This iteration,
@@ -15,7 +15,7 @@ About the Center for Threat Informed Defense
 ********************************************
 
 The Center is a non-profit, privately funded research and development organization
-operated by MITRE Engenuity. The Center’s mission is to advance the state of the art and
+operated by MITRE. The Center’s mission is to advance the state of the art and
 the state of the practice in threat-informed defense globally. Comprised of participant
 organizations from around the globe with highly sophisticated security teams, the Center
 builds on MITRE ATT&CK®, an important foundation for threat informed defense used by
@@ -24,5 +24,5 @@ operates for the public good, outputs of its research and development are availa
 publicly and for the benefit of all.
 
 For more information visit `Center for Threat-Informed Defense
-<https://ctid.mitre-engenuity.org/>`_ or email us `ctid@mitre-engenuity.org
-<mailto:ctid@mitre-engenuity.org>`__.
+<https://ctid.mitre.org/>`_ or email us `ctid@mitre.org
+<mailto:ctid@mitre.org>`__.

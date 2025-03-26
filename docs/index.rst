@@ -10,13 +10,13 @@ analyze trends in evolving adversary behaviors and provide a data-driven
 resource to support prioritizing defensive operations. This project ingests ATT&CK
 technique sightings and processes them to produce useful datasets and reporting.
 
-This project is created and maintained by the `MITRE Engenuity Center for
-Threat-Informed Defense <https://ctid.mitre-engenuity.org/>`__ in futherance of our
+This project is created and maintained by the `MITRE Center for
+Threat-Informed Defense <https://ctid.mitre.org/>`__ in futherance of our
 mission to advance the state of the art and the state of the practice in threat-informed
 defense globally. The project is funded by our `research participants
-<https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/our-work/sightings-ecosystem/#RESEARCH-PARTICIPANTS>`__.
+<https://ctid.mitre.org/projects/sightings-ecosystem#participants-section>`__.
 You can be a part of the success of this project by contributing your Sightings data and
-help advance the state of cybersecurity at large. Email ctid@mitre-engenuity.org for
+help advance the state of cybersecurity at large. Email ctid@mitre.org for
 details.
 
 .. toctree::
@@ -37,7 +37,7 @@ details.
 Notice
 ------
 
-© |copyright_years| MITRE Engenuity. Approved for public release. Document number(s)
+© |copyright_years| MITRE. Approved for public release. Document number(s)
 |prs_numbers|.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this

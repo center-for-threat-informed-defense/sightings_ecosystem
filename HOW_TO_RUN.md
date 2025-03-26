@@ -169,7 +169,7 @@ http://127.0.0.1:80
 The default credentials are:
 
 ```txt
-User: sightings@mitre-engenuity.org
+User: sightings@mitre.org
 Password: sightings
 ```
 
@@ -181,13 +181,13 @@ Within the pgadmin web interface one can establish a connection to the DB as fol
 
 ## Questions and Feedback
 
-Please submit issues for any technical questions/concerns or contact ctid@mitre-engenuity.org directly for more general inquiries.
+Please submit issues for any technical questions/concerns or contact [ctid@mitre.org] directly for more general inquiries.
 
 Also see the [guidance for contributors](./CONTRIBUTING.md) if are you interested in contributing or simply reporting issues.
 
 ## Notice
 
-Copyright 2021 MITRE Engenuity. Approved for public release. Document number XXXXX
+Copyright 2021, 2024 MITRE. Approved for public release. Document number(s) CT0022, CT0103.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
