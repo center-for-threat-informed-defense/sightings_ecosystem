@@ -24,7 +24,7 @@ Flows and JSON Schema for the language.
 | Resource                                                                                                     | Description                                                                              |
 | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
 | [Project Web Site](https://center-for-threat-informed-defense.github.io/sightings_ecosystem/)                | Complete documentation for the Sightings Ecosystem.                                      |
-| [Sightings Data](https://ctidpublic.blob.core.windows.net/sightings/sightings_v2_public.csv)                 | Download the underlying Sightings data. (CSV – 25.7MiB)                                  |
+| [Sightings Data](docs/extra/sightings_v2_public.csv)                 | Download the Sightings data. (CSV – 63.3 MiB)                                  |
 | [Upload Tool](https://github.com/center-for-threat-informed-defense/sightings_ecosystem/tree/main/uploaders) | A tool for automatically submitting sightings data (supports Linux, MacOS, and Windows). |
 
 ## Background

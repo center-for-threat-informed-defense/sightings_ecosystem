@@ -156,11 +156,11 @@ are the most frequently seen.
 Download Data
 -------------
 
-Download the cleaned and anonymized Sightings 2.0 dataset.
+Download the cleaned and anonymized Sightings dataset.
 
 .. raw:: html
 
     <p>
-        <a class="btn btn-primary" target="_blank" href="https://ctidpublic.blob.core.windows.net/sightings/sightings_v2_public.csv" download="sightings_v2_public.csv">
-        <i class="fa fa-download"></i> Download Sightings CSV (25.7 MiB)</a>
+        <a class="btn btn-primary" target="_blank" href="../sightings_v2_public.csv" download="sightings_v2_public.csv">
+        <i class="fa fa-download"></i> Download Sightings CSV (63.3 MiB)</a>
     </p>
